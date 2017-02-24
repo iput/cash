@@ -137,12 +137,12 @@
       <ul class="sidebar-menu">
         <li class="header">NAVIGASI UTAMA</li>
         <li class="treeview ">
-          <a href="">
+          <a href="<?php echo base_url('pm_index'); ?>">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="<?php echo base_url('pm_personil'); ?>">
             <i class="fa fa-files-o"></i>
             <span>Personil Proyek</span>
           </a>
@@ -155,8 +155,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Anggaran Proyek</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a></li>
+            <li><a href="<?php echo base_url('pm_aproyek'); ?>"><i class="fa fa-circle-o"></i> Anggaran Proyek</a></li>
+            <li><a href="<?php echo base_url('pm_ppengeluaran'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -168,8 +168,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href=""><i class="fa fa-circle-o"></i> Pemasukan</a></li>
-            <li><a href=""><i class="fa fa-circle-o"></i> Pengeluaran</a></li>
+            <li><a href="<?php echo base_url('pm_pemasukan_pribadi'); ?>"><i class="fa fa-circle-o"></i> Pemasukan</a></li>
+            <li><a href="<?php echo base_url('pm_pengeluaran_pribadi'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran</a></li>
           </ul>
         </li>
         <li class="treeview">
