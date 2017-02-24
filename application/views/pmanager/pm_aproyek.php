@@ -47,7 +47,6 @@
                 <td>ISO BALI</td>
                 <td>Makhfud</td>
                 <td>12000000</td>
-                <td>a</td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP"><span class="fa fa-pencil"></span></a>
                   <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="glyphicon glyphicon-remove"></span></a>

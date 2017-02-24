@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin page Petty Cash</title>
+  <title>Manajer page Petty Cash</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -136,23 +136,16 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">NAVIGASI UTAMA</li>
-        <li class="treeview <?php echo $stat1; ?>">
-          <a href="<?php echo base_url('Welcome/index'); ?>">
+        <li class="treeview ">
+          <a href="">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
-            <span>Personil</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+            <span>Personil Proyek</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_personil/index'); ?>"><i class="fa fa-circle-o <?php echo $stat2; ?>"></i> Data Personil</a></li>
-            <li><a href="<?php echo base_url('C_personil_proyek/index'); ?>"><i class="fa fa-circle-o <?php echo $stat3; ?>"></i> Personil Proyek</a></li>
-          </ul>
         </li>
         <li class="treeview">
           <a href="#">
@@ -162,20 +155,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_proyek'); ?>"><i class="fa fa-circle-o"></i> Data Proyek</a></li>
-            <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Pengeluaran Proyek
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url('c_anggaran_proyek'); ?>"><i class="fa fa-circle-o"></i> Anggaran Proyek</a></li>
-                <li>
-                  <a href="<?php echo base_url('c_pengeluaran_proyek'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a>
-                </li>
-              </ul>
-            </li>
+            <li><a href=""><i class="fa fa-circle-o"></i> Anggaran Proyek</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -187,8 +168,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_pribadi_pemasukan'); ?>"><i class="fa fa-circle-o"></i> Pemasukan</a></li>
-            <li><a href="<?php echo base_url('C_pribadi_pengeluaran') ?>"><i class="fa fa-circle-o"></i> Pengeluaran</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> Pemasukan</a></li>
+            <li><a href=""><i class="fa fa-circle-o"></i> Pengeluaran</a></li>
           </ul>
         </li>
         <li class="treeview">

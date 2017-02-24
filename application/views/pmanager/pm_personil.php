@@ -6,7 +6,10 @@
         Personil
         <small>Petty Cash</small>
       </h1>
+
+
     </section>
+
     <!-- Main content -->
     <section class="content">
 
@@ -76,44 +79,24 @@
     <div class="modal-content">
       <div class="modal-header bg-aqua">
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-        <h3>Tambah personil Baru</h3>
+        <h3>Tambah personil proyek</h3>
       </div>
       <div class="modal-body">
         <form class="form-horizontal">
           <div class="form-group">
-            <label class="control-label col-md-3">Nama User</label>
+            <label class="control-label col-md-3">Nama Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="txt_nama_personil" class="form-control" placeholder="Nama User">
+              <select class="form-control" name="nama_proyek">
+                <option>Pilih Proyek</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-md-3">Alamat Lengkap</label>
+            <label class="control-label col-md-3">Pengguna Proyek</label>
             <div class="col-md-6">
-              <textarea class="form-control col-md-6" name="txt_alamat"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Nomor HP</label>
-            <div class="col-md-6">
-              <input type="text" name="txt_nohp" class="form-control" placeholder="nomor aktif">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Email</label>
-            <div class="col-md-6">
-              <input type="email" name="txt_email" class="form-control" placeholder="Email aktif">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Username</label>
-            <div class="col-md-6">
-              <input type="text" name="txt_username" class="form-control" placeholder="username">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Password</label>
-            <div class="col-md-6">
-              <input type="password" name="txt_password" class="form-control" placeholder="********">
+              <select class="form-control" name="nama_pengguna">
+                <option>Pilih Pengguna</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
@@ -139,39 +122,19 @@
         <div class="modal-body">
         <form class="form-horizontal">
           <div class="form-group">
-            <label class="control-label col-md-3">Nama User</label>
+            <label class="control-label col-md-3">Nama Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="edit_nama" class="form-control" placeholder="Nama User">
+              <select class="form-control" name="nama_proyek">
+                <option>Pilih Proyek</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
-            <label class="control-label col-md-3">Alamat Lengkap</label>
+            <label class="control-label col-md-3">Pengguna Proyek</label>
             <div class="col-md-6">
-              <textarea class="form-control col-md-6" name="edit_alamat"></textarea>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Nomor HP</label>
-            <div class="col-md-6">
-              <input type="text" name="edit_nohp" class="form-control" placeholder="nomor aktif">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Email</label>
-            <div class="col-md-6">
-              <input type="email" name="edit_email" class="form-control" placeholder="Email aktif">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Username</label>
-            <div class="col-md-6">
-              <input type="text" name="edit_username" class="form-control" placeholder="username">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Password</label>
-            <div class="col-md-6">
-              <input type="password" name="edit_password" class="form-control" placeholder="********">
+              <select class="form-control" name="nama_pengguna">
+                <option>Pilih Pengguna</option>
+              </select>
             </div>
           </div>
           <div class="form-group">
