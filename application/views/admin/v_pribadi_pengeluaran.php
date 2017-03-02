@@ -16,16 +16,6 @@
 
       <!-- Default box -->
       <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Timeline</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
         <div class="box-body">
       <div class="row">
         <div class="col-xs-12">
@@ -109,12 +99,6 @@
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-md-3">Bukti Pengeluaran</label>
-              <div class="col-md-6">
-                <input type="file" name="foto_bukti" class="form-control">
-              </div>
-            </div>
-            <div class="form-group">
             <div class="col-md-3"></div>
               <div class="col-md-6">
                 <button type="button" class="btn btn-danger btn-flat" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;Batal</button>
@@ -160,12 +144,6 @@
               <label class="control-label col-md-3">Keterangan Pengeluaran</label>
               <div class="col-md-6">
                 <textarea class="form-control" name="edit_ket_pengeluaran"></textarea>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-md-3">Bukti Pengeluaran</label>
-              <div class="col-md-6">
-                <input type="file" name="edit_foto_bukti" class="form-control">
               </div>
             </div>
             <div class="form-group">

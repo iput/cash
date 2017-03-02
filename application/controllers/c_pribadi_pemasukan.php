@@ -23,7 +23,7 @@ defined('BASEPATH')OR exit('tak ada akses yang diizinkan');
 		$data['stat8']="";
 		$data['stat9']="";
 		$this->load->view('attribute/header', $data);
-		$this->load->view('admin/v_pribadi_pemasukan');
+		$this->load->view('admin/v_pribadi');
 		$this->load->view('attribute/footer');
  	}
  } ?>

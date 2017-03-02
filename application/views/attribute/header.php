@@ -142,17 +142,11 @@
           </a>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="<?php echo base_url('C_personil/index'); ?>">
             <i class="fa fa-files-o"></i>
             <span>Personil</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_personil/index'); ?>"><i class="fa fa-circle-o <?php echo $stat2; ?>"></i> Data Personil</a></li>
-            <li><a href="<?php echo base_url('C_personil_proyek/index'); ?>"><i class="fa fa-circle-o <?php echo $stat3; ?>"></i> Personil Proyek</a></li>
-          </ul>
+            
         </li>
         <li class="treeview">
           <a href="#">
@@ -163,33 +157,15 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('C_proyek'); ?>"><i class="fa fa-circle-o"></i> Data Proyek</a></li>
-            <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Pengeluaran Proyek
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="<?php echo base_url('c_anggaran_proyek'); ?>"><i class="fa fa-circle-o"></i> Anggaran Proyek</a></li>
-                <li>
-                  <a href="<?php echo base_url('c_pengeluaran_proyek'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a>
-                </li>
-              </ul>
-            </li>
+            <li><a href="<?php echo base_url('C_personil_proyek/index'); ?>"><i class="fa fa-circle-o <?php echo $stat3; ?>"></i> Personil Proyek</a></li>
+            <li><a href="<?php echo base_url('c_pengeluaran_proyek'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="<?php echo base_url('C_pribadi_pemasukan'); ?>">
             <i class="fa fa-pie-chart"></i>
             <span>Pengeluaran Pribadi</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_pribadi_pemasukan'); ?>"><i class="fa fa-circle-o"></i> Pemasukan</a></li>
-            <li><a href="<?php echo base_url('C_pribadi_pengeluaran') ?>"><i class="fa fa-circle-o"></i> Pengeluaran</a></li>
-          </ul>
         </li>
         <li class="treeview">
           <a href="#">

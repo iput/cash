@@ -13,16 +13,6 @@
 
       <!-- Default box -->
       <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Timeline</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
         <div class="box-body">
       <div class="row">
         <div class="col-xs-12">
@@ -83,7 +73,7 @@
           <div class="form-group">
             <label class="control-label col-md-3">Nama User</label>
             <div class="col-md-6">
-              <input type="text" name="txt_nama_personil" class="form-control" placeholder="Nama User">
+              <input type="text" name="txt_nama_personil" class="form-control" placeholder="Nama User" maxlength="20">
             </div>
           </div>
           <div class="form-group">
@@ -95,25 +85,13 @@
           <div class="form-group">
             <label class="control-label col-md-3">Nomor HP</label>
             <div class="col-md-6">
-              <input type="text" name="txt_nohp" class="form-control" placeholder="nomor aktif">
+              <input type="tel" name="txt_nohp" class="form-control" placeholder="nomor aktif" maxlength="13">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Email</label>
             <div class="col-md-6">
-              <input type="email" name="txt_email" class="form-control" placeholder="Email aktif">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Username</label>
-            <div class="col-md-6">
-              <input type="text" name="txt_username" class="form-control" placeholder="username">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Password</label>
-            <div class="col-md-6">
-              <input type="password" name="txt_password" class="form-control" placeholder="********">
+              <input type="email" name="txt_email" class="form-control" placeholder="Email aktif" maxlength="30">
             </div>
           </div>
           <div class="form-group">
@@ -141,7 +119,7 @@
           <div class="form-group">
             <label class="control-label col-md-3">Nama User</label>
             <div class="col-md-6">
-              <input type="text" name="edit_nama" class="form-control" placeholder="Nama User">
+              <input type="text" name="edit_nama" class="form-control" placeholder="Nama User" maxlength="20">
             </div>
           </div>
           <div class="form-group">
@@ -153,25 +131,13 @@
           <div class="form-group">
             <label class="control-label col-md-3">Nomor HP</label>
             <div class="col-md-6">
-              <input type="text" name="edit_nohp" class="form-control" placeholder="nomor aktif">
+              <input type="text" name="edit_nohp" class="form-control" placeholder="nomor aktif" type="number" maxlength="13">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Email</label>
             <div class="col-md-6">
-              <input type="email" name="edit_email" class="form-control" placeholder="Email aktif">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Username</label>
-            <div class="col-md-6">
-              <input type="text" name="edit_username" class="form-control" placeholder="username">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label col-md-3">Password</label>
-            <div class="col-md-6">
-              <input type="password" name="edit_password" class="form-control" placeholder="********">
+              <input type="email" name="edit_email" class="form-control" placeholder="Email aktif" maxlength="20">
             </div>
           </div>
           <div class="form-group">

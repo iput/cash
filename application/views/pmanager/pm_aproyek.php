@@ -16,16 +16,6 @@
 
       <!-- Default box -->
       <div class="box">
-        <div class="box-header with-border">
-          <h3 class="box-title">Timeline</h3>
-
-          <div class="box-tools pull-right">
-            <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fa fa-minus"></i></button>
-            <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
-          </div>
-        </div>
         <div class="box-body">
       <div class="row">
         <div class="col-xs-12">
@@ -72,7 +62,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="tambah_anggaran">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
-    <div class="modal-header">
+    <div class="modal-header bg-aqua">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       <h3>Tambah anggaran dana</h3>
     </div>
@@ -114,7 +104,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="edit_anggaran">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
-    <div class="modal-header">
+    <div class="modal-header bg-aqua">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
       <h3>Perbarui anggaran dana</h3>
     </div>
