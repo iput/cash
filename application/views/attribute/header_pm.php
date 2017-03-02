@@ -142,12 +142,6 @@
           </a>
         </li>
         <li class="treeview">
-          <a href="<?php echo base_url('pm_personil'); ?>">
-            <i class="fa fa-files-o"></i>
-            <span>Personil Proyek</span>
-          </a>
-        </li>
-        <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Proyek</span>
             <span class="pull-right-container">
@@ -155,22 +149,20 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('pm_aproyek'); ?>"><i class="fa fa-circle-o"></i> Anggaran Proyek</a></li>
-            <li><a href="<?php echo base_url('pm_ppengeluaran'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a></li>
+          <li><a href="<?php echo base_url('pm_personil'); ?>">
+            <i class="fa fa-circle-o"></i>
+            <span>Personil Proyek</span>
+          </a>
+        </li>
+            <li><a href="<?php echo base_url('pm_aproyek'); ?>"><i class="fa fa-circle-o"></i>&nbsp;Anggaran Pengeluaran</a></li>
+            <li><a href="<?php echo base_url('pm_ppengeluaran'); ?>"><i class="fa fa-circle-o"></i>&nbsp;Pengeluaran Proyek</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#">
+          <a href="<?php echo base_url('pm_pemasukan_pribadi'); ?>">
             <i class="fa fa-pie-chart"></i>
             <span>Pengeluaran Pribadi</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('pm_pemasukan_pribadi'); ?>"><i class="fa fa-circle-o"></i> Pemasukan</a></li>
-            <li><a href="<?php echo base_url('pm_pengeluaran_pribadi'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran</a></li>
-          </ul>
         </li>
         <li class="treeview">
           <a href="#">

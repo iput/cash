@@ -64,10 +64,18 @@
   <div class="modal-content">
     <div class="modal-header bg-aqua">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-      <h3>Tambah anggaran dana</h3>
+      <h3>Tambah anggaran pengeluaran</h3>
     </div>
     <div class="modal-body">
       <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-md-3">Nama Proyek</label>
+          <div class="col-md-6">
+            <select class="form-control" name="nama_proyek">
+              <option value="null">Pilih Nama proyek tujuan anggaran</option>
+            </select>
+          </div>
+        </div>      
         <div class="form-group">
           <label class="control-label col-md-3">Nama Anggaran</label>
           <div class="col-md-6">
@@ -78,14 +86,6 @@
           <label class="control-label col-md-3">Jumlah Anggaran</label>
           <div class="col-md-6">
             <input type="text" name="jumlah_anggaran" class="form-control" placeholder="Rp. ">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-md-3">Nama Proyek</label>
-          <div class="col-md-6">
-            <select class="form-control" name="nama_proyek">
-              <option value="null">Pilih Nama proyek tujuan anggaran</option>
-            </select>
           </div>
         </div>
         <div class="form-group">
@@ -106,10 +106,18 @@
   <div class="modal-content">
     <div class="modal-header bg-aqua">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-      <h3>Perbarui anggaran dana</h3>
+      <h3>Perbarui anggaran pengeluaran</h3>
     </div>
     <div class="modal-body">
       <form class="form-horizontal">
+        <div class="form-group">
+          <label class="control-label col-md-3">Nama Proyek</label>
+          <div class="col-md-6">
+            <select class="form-control" name="nama_proyek">
+              <option value="null">Pilih Nama proyek tujuan anggaran</option>
+            </select>
+          </div>
+        </div>      
         <div class="form-group">
           <label class="control-label col-md-3">Nama Anggaran</label>
           <div class="col-md-6">
@@ -120,14 +128,6 @@
           <label class="control-label col-md-3">Jumlah Anggaran</label>
           <div class="col-md-6">
             <input type="text" name="edit_jumlah_anggaran" class="form-control" placeholder="Rp. ">
-          </div>
-        </div>
-        <div class="form-group">
-          <label class="control-label col-md-3">Nama Proyek</label>
-          <div class="col-md-6">
-            <select class="form-control" name="edit_nama_proyek">
-              <option value="null">Pilih Nama proyek tujuan anggaran</option>
-            </select>
           </div>
         </div>
         <div class="form-group">

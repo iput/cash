@@ -75,42 +75,48 @@
     <div class="modal-body">
       <form class="form-horizontal">
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Proyek</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Nama Proyek</label>
+          <div class="col-md-8">
             <select class="form-control" name="cb_anggaran">
               <option>Pilih nama proyek</option>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Pengguna</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Nama Anggaran</label>
+          <div class="col-md-8">
             <select class="form-control" name="nama_penggunaP">
-              <option>Pilih pengguna proyek</option>
+              <option>Pilih Anggaran proyek</option>
             </select>
           </div>
         </div>        
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Pengeluaran</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Nama Pengeluaran</label>
+          <div class="col-md-8">
             <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran">
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Keterangan Pengeluaran</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Jumlah Pengeluaran</label>
+          <div class="col-md-8">
+            <input type="text" name="jumlah_pengeluaran" class="form-control" placeholder="Rp. ">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label col-md-4">Keterangan Pengeluaran</label>
+          <div class="col-md-8">
             <textarea class="form-control" name="ket_pengeluaran"></textarea>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Bukti Pengeluaran</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Bukti Pengeluaran</label>
+          <div class="col-md-8">
             <input type="file" name="foto_bukti" class="form-control">
           </div>
         </div>
         <div class="form-group">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
+          <div class="col-md-4"></div>
+          <div class="col-md-8">
             <button type="button" class="btn btn-danger btn-flat" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;Batal</button>
             <button type="submit" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-save"></span>&nbsp;Simpan</button>
           </div>
@@ -131,42 +137,48 @@
     <div class="modal-body">
       <form class="form-horizontal">
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Proyek</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Nama Proyek</label>
+          <div class="col-md-8">
             <select class="form-control" name="cb_anggaran">
               <option>Pilih nama proyek</option>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Pengguna</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Nama Anggaran</label>
+          <div class="col-md-8">
             <select class="form-control" name="nama_penggunaP">
-              <option>Pilih pengguna proyek</option>
+              <option>Pilih Anggaran proyek</option>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Pengeluaran</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Nama Pengeluaran</label>
+          <div class="col-md-8">
             <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran">
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Keterangan Pengeluaran</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Jumlah Pengeluaran</label>
+          <div class="col-md-8">
+            <input type="text" name="jumlah_pengeluaran" class="form-control" placeholder="Rp. ">
+          </div>
+        </div>        
+        <div class="form-group">
+          <label class="control-label col-md-4">Keterangan Pengeluaran</label>
+          <div class="col-md-8">
             <textarea class="form-control" name="ket_pengeluaran"></textarea>
           </div>
         </div>
         <div class="form-group">
-          <label class="control-label col-md-3">Bukti Pengeluaran</label>
-          <div class="col-md-6">
+          <label class="control-label col-md-4">Bukti Pengeluaran</label>
+          <div class="col-md-8">
             <input type="file" name="foto_bukti" class="form-control">
           </div>
         </div>
         <div class="form-group">
-          <div class="col-md-3"></div>
-          <div class="col-md-6">
+          <div class="col-md-4"></div>
+          <div class="col-md-8">
             <button type="button" class="btn btn-danger btn-flat" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;Batal</button>
             <button type="submit" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-save"></span>&nbsp;Simpan</button>
           </div>
