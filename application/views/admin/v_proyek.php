@@ -117,19 +117,19 @@
           <div class="form-group">
             <label class="control-label col-md-3">Nama Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="nama_proyek" class="form-control" placeholder="nama proyek">
+              <input type="text" name="nama_proyek" class="form-control" placeholder="nama proyek" required="" maxlength="30">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Anggaran Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="anggaran_proyek" class="form-control" placeholder="Rp. ">
+              <input type="text" name="anggaran_proyek" id= "anggaran_proyek" class="form-control" placeholder="Rp. ">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Durasi Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="durasi_proyek" class="form-control">
+              <input type="text" name="durasi_proyek" class="form-control" placeholder="waktu dalam bentuk bulan" onkeypress="return isNumberKey(event)" required="" maxlength="3">
             </div>
           </div>
           <div class="form-group">
@@ -139,7 +139,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                  <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
             </div>
           </div>
@@ -150,7 +150,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                  <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
             </div>
           </div>          
