@@ -81,7 +81,7 @@
         <div class="form-group">
           <label class="control-label col-md-3">Nama Pengeluaran</label>
           <div class="col-md-6">
-            <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran">
+            <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran" maxlength="20">
           </div>
         </div>
         <div class="form-group">
@@ -129,7 +129,7 @@
         <div class="form-group">
           <label class="control-label col-md-3">Nama Pengeluaran</label>
           <div class="col-md-6">
-            <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran">
+            <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran" maxlength="20">
           </div>
         </div>
         <div class="form-group">

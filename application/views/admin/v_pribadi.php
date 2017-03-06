@@ -119,7 +119,7 @@
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pengeluaran</label>
             <div class="col-md-6">
-              <input type="text" name="edit_tanggal_pemasukan" class="form-control" placeholder="yyyy-hh-mm">
+              <input type="date" name="edit_tanggal_pemasukan" class="form-control">
             </div>
           </div>        
           <div class="form-group">
@@ -159,7 +159,7 @@
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pengeluaran</label>
             <div class="col-md-6">
-              <input type="text" name="edit_tanggal_pemasukan" class="form-control" placeholder="yyyy-hh-mm">
+              <input type="date" name="edit_tanggal_pemasukan" class="form-control">
             </div>
           </div>        
           <div class="form-group">

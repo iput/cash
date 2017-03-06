@@ -79,7 +79,7 @@
         <div class="form-group">
           <label class="control-label col-md-3">Nama Anggaran</label>
           <div class="col-md-6">
-            <input type="text" name="nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran">
+            <input type="text" name="nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran" maxlength="20">
           </div>
         </div>
         <div class="form-group">
@@ -121,7 +121,7 @@
         <div class="form-group">
           <label class="control-label col-md-3">Nama Anggaran</label>
           <div class="col-md-6">
-            <input type="text" name="edit_nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran">
+            <input type="text" name="edit_nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran" maxlength="20">
           </div>
         </div>
         <div class="form-group">
