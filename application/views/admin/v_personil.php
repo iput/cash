@@ -21,7 +21,7 @@
           <table class=" table table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <td>No</td>
+                <td>ID User</td>
                 <td>Nama User</td>
                 <td>Alamat</td>
                 <td>Email</td>
@@ -32,25 +32,35 @@
               </tr>
             </thead>
             <tbody id="tabel_personil">
+              <?php foreach ($data_in as $data): ?>
+                <?php $status = $data['is_active'];
+                if ($status == '1'){
+                $status ='<small class="label label-success">online</small>';  
+                }
+                else{
+                $status ='<small class="label label-danger">offline</small>';
+                }
+                ?>
               <tr>
-                <td>No</td>
-                <td>Nama User</td>
-                <td>Alamat</td>
-                <td>Email</td>
-                <td>No. HP</td>
-                <td>Username</td>
-                <td>Status</td>
+                <td><?php echo $data['id_user']; ?></td>
+                <td><?php echo $data['nama_user']; ?></td>
+                <td><?php echo $data['alamat']; ?></td>
+                <td><?php echo $data['email']; ?></td>
+                <td><?php echo $data['no_hp']; ?></td>
+                <td><?php echo $data['username']; ?></td>
+                <td><?php echo $status?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_personil"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Yakin akan menghapus data ?');"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_personil" data="<?php echo $data['id_user'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url() ?>c_personil/delete_personil/<?= $data['id_user'] ?>" class="btn btn-danger btn-flat" onclick="return confirm('Yakin akan menghapus data ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>
       </div>
         </div>
-        <!-- /.box-body -->
+        <!-- /.box-body -->        
         <div class="box-footer">
           Official Gasek Community
         </div>
@@ -69,29 +79,29 @@
         <h3>Tambah personil Baru</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" id="form_tambah_personil" method="POST" action="<?php echo base_url('c_personil/add_personil');?>">
           <div class="form-group">
             <label class="control-label col-md-3">Nama User</label>
             <div class="col-md-6">
-              <input type="text" name="txt_nama_personil" class="form-control" placeholder="Nama User" maxlength="20">
+              <input type="text" name="txt_nama_personil" class="form-control" placeholder="Nama User" maxlength="20" required="">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Alamat Lengkap</label>
             <div class="col-md-6">
-              <textarea class="form-control col-md-6" name="txt_alamat"></textarea>
+              <textarea class="form-control col-md-6" name="txt_alamat" required=""></textarea>
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Nomor HP</label>
             <div class="col-md-6">
-              <input type="tel" name="txt_nohp" class="form-control" placeholder="nomor aktif" maxlength="13">
+              <input type="text" name="txt_nohp" class="form-control" placeholder="nomor aktif" maxlength="12" onkeypress="return isNumberKey(event)" required="">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Email</label>
             <div class="col-md-6">
-              <input type="email" name="txt_email" class="form-control" placeholder="Email aktif" maxlength="30">
+              <input type="email" name="txt_email" class="form-control" placeholder="Email aktif" maxlength="30" required="">
             </div>
           </div>
           <div class="form-group">
@@ -115,7 +125,8 @@
           <h3>Edit data Personil</h3>
         </div>
         <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" id ="form_edit_personil" method="POST" action="<?php echo base_url('c_personil/update_personil')?>">
+          <input type="hidden" name="edit_iduser">
           <div class="form-group">
             <label class="control-label col-md-3">Nama User</label>
             <div class="col-md-6">
@@ -131,7 +142,7 @@
           <div class="form-group">
             <label class="control-label col-md-3">Nomor HP</label>
             <div class="col-md-6">
-              <input type="text" name="edit_nohp" class="form-control" placeholder="nomor aktif" type="number" maxlength="13">
+              <input type="text" name="edit_nohp" class="form-control" placeholder="nomor aktif" type="number" maxlength="12" onkeypress="return isNumberKey(event)">
             </div>
           </div>
           <div class="form-group">
