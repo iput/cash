@@ -43,15 +43,21 @@
               </tr>
             </thead>
             <tbody id="tabel_proyek">
+            <?php foreach ($data_project as $data)?>
+            <?php 
+            $tgl_mulai = $data['tanggal_mulai'];
+            $tgl_selesai = $data['tanggal_selesai'];
+            $biaya = $data['anggaran'];
+            ?>
               <tr>
-                <td>1</td>
-                <td>ISO BALI</td>
-                <td>1200000</td>
-                <td>12000000</td>
-                <td>2387198</td>
+                <td><?php echo $data['id_project']?></td>
+                <td><?php echo $data['nama_project']?></td>
+                <td><?php echo "Rp. ".number_format($biaya,2,',','.')?></td>
+                <td><?php echo date('d F Y', strtotime($tgl_mulai))?></td>
+                <td><?php echo date('d F Y', strtotime($tgl_selesai))?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_proyek"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data ini ?');"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_proyek" data = "<?php echo $data['id_project'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url()?>c_proyek/delete_project/<?= $data['id_project']?>" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
             </tbody>
@@ -60,25 +66,26 @@
               <!-- /.tab-pane -->
               <div class="tab-pane" id="tab_2-2">
               <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#tambah_anggaran"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Tambah Suntikan Dana</button>
-              <h3>Data Anggaran Pengeluaran proyek</h3>
+              <h3>Data Suntikan Anggaran Proyek</h3>
           <table class=" table table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <td>No</td>
-                <td>Nama Anggaran</td>
+                <td>Nama Proyek</td>
+                <td>Sumber Anggaran</td>
                 <td>Jumlah Anggaran</td>
-                <td>Waktu Penambahan anggaran</td>
+                <td>Waktu Masuk</td>
                 <td><span class="glyphicon glyphicon-cog"></span></td>
               </tr>
             </thead>
             <tbody id="tabel_anggarandana">
+            <?php foreach ($suntikan_anggaran as $key)?>
               <tr>
-                <td>1</td>
-                <td>ISO BALI</td>
-                <td>Makhfud</td>
-                <td>12000000</td>
+                <td><?php echo $key['nama_project']?></td>
+                <td><?php echo $key['nama_tambahan']?></td>
+                <td><?php echo "Rp. ".number_format($key['jumlah_tambahan'],2,',','.')?></td>
+                <td><?php echo date('d F Y', strtotime($key['waktu_tambahan']))?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP"><span class="fa fa-pencil"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP" data ="<?php echo $key['id_tambahan'];?>"><span class="fa fa-pencil"></span></a>
                   <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="glyphicon glyphicon-remove"></span></a>
                 </td>
               </tr>
@@ -113,7 +120,7 @@
         <h3>Tambah Proyek</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="<?php echo base_url('c_proyek/add_project')?>">
           <div class="form-group">
             <label class="control-label col-md-3">Nama Proyek</label>
             <div class="col-md-6">
@@ -123,13 +130,13 @@
           <div class="form-group">
             <label class="control-label col-md-3">Anggaran Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="anggaran_proyek" id= "anggaran_proyek" class="form-control" placeholder="Rp. ">
+              <input type="text" name="anggaran_proyek" id= "anggaran_proyek" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3">Durasi Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="durasi_proyek" class="form-control" placeholder="waktu dalam bentuk bulan" onkeypress="return isNumberKey(event)" required="" maxlength="3">
+              <input type="text" name="durasi_proyek" class="form-control" placeholder="waktu dalam bentuk bulan" onkeypress="return isNumberKey(event)" required="" maxlength="3" id="durasi_proyek">
             </div>
           </div>
           <div class="form-group">
@@ -139,7 +146,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                  <input type="date" name="tgl_mulai" id ="tgl_mulai" value="<?php echo date('Y-m-d H:i:s');?>" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
             </div>
           </div>
@@ -150,7 +157,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="date" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                  <input type="date" name="tgl_selesai" id ="tgl_selesai" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
             </div>
           </div>          
@@ -167,6 +174,7 @@
   </div>
 </div>
 
+<!--Modal Edit Data Proyek-->
 <div class="modal fade" tabindex="-1" role="dialog" id="edit_proyek">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -175,7 +183,8 @@
         <h3>Edit proyek</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="<?php echo base_url('c_proyek/update_project')?>">
+        <input type="hidden" name="edit_idproyek">
           <div class="form-group">
             <label class="control-label col-md-3">Nama Proyek</label>
             <div class="col-md-6">
@@ -185,7 +194,7 @@
           <div class="form-group">
             <label class="control-label col-md-3">Anggaran Proyek</label>
             <div class="col-md-6">
-              <input type="text" name="edit_anggaran_proyek" class="form-control" placeholder="Rp. ">
+              <input type="text" name="edit_anggaran_proyek" id ="edit_anggaran_proyek" class="form-control">
             </div>
           </div>
           <div class="form-group">
@@ -201,7 +210,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                  <input type="date" class="form-control" name ="edit_tgl_mulai" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
             </div>
           </div>
@@ -212,7 +221,7 @@
                   <div class="input-group-addon">
                     <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                  <input type="date" class="form-control" name ="edit_tgl_selesai" data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
                 </div>
             </div>
           </div>          
@@ -229,39 +238,43 @@
   </div> 
 </div>
 
+<!-- Modal Tambah Suntikan Dana-->
 <div class="modal fade" tabindex="-1" role="dialog" id="tambah_anggaran">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-      <h3>Tambah anggaran pengeluaran proyek</h3>
+      <h3>Suntikan Dana Proyek</h3>
     </div>
     <div class="modal-body">
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post" action="<?php echo base_url('c_proyek/add_suntikan_anggaran');?>">
         <div class="form-group">
           <label class="control-label col-md-3">Nama Proyek</label>
           <div class="col-md-6">
             <select class="form-control" name="nama_proyek">
-              <option value="null">Pilih Nama proyek tujuan anggaran</option>
+            <option value="null">Pilih Nama proyek</option>
+            <?php foreach ($data_in as $data)?>            
+              <option value="<?php echo $data['id_project']?>"><?php echo $data['nama_project']?></option>
+              <?php ?>
             </select>
           </div>
         </div>      
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Anggaran</label>
+          <label class="control-label col-md-3">Sumber Anggaran</label>
           <div class="col-md-6">
-            <input type="text" name="nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran">
+            <input type="text" name="nama_anggaran" class="form-control" placeholder="Sumber Anggaran Proyek" maxlength="40" required="">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-3">Jumlah Anggaran</label>
           <div class="col-md-6">
-            <input type="text" name="jumlah_anggaran" class="form-control" placeholder="Rp. ">
+            <input type="text" name="jumlah_anggaran" class="form-control" id="jumlah_anggaran" required="">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-3">Waktu Input Anggaran</label>
           <div class="col-md-6">
-            <input type="date" name="waktu_input" class="form-control">
+            <input type="date" name="waktu_input" class="form-control" required="" value="<?php echo date('Y-m-d H:i:s');?>">
           </div>
         </div>
         <div class="form-group">
@@ -277,25 +290,30 @@
 </div>  
 </div>
 
+<!-- Modal Edit Suntikan Dana Proyek-->
 <div class="modal fade" tabindex="-1" role="dialog" id="edit_anggaran">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-      <h3>Perbarui anggaran Pengeluaran proyek</h3>
+      <h3>Edit Suntikan Anggaran Proyek</h3>
     </div>
     <div class="modal-body">
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post" action="<?php echo base_url('c_proyek/update_suntikan');?>">
+      <input type="hidden" name="edit_idsuntikan">
         <div class="form-group">
           <label class="control-label col-md-3">Nama Proyek</label>
           <div class="col-md-6">
             <select class="form-control" name="edit_nama_proyek">
               <option value="null">Pilih Nama proyek tujuan anggaran</option>
+              <?php foreach ($data_in as $data)?>            
+              <option value="<?php echo $data['id_project']?>"><?php echo $data['nama_project']?></option>
+              <?php ?>
             </select>
           </div>
         </div>      
         <div class="form-group">
-          <label class="control-label col-md-3">Nama Anggaran</label>
+          <label class="control-label col-md-3">Sumber Anggaran</label>
           <div class="col-md-6">
             <input type="text" name="edit_nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran">
           </div>
@@ -303,7 +321,7 @@
         <div class="form-group">
           <label class="control-label col-md-3">Jumlah Anggaran</label>
           <div class="col-md-6">
-            <input type="text" name="edit_jumlah_anggaran" class="form-control" placeholder="Rp. ">
+            <input type="text" name="edit_jumlah_anggaran" class="form-control" required="" id="edit_jumlah_anggaran">
           </div>
         </div>
         <div class="form-group">
