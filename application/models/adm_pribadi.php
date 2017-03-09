@@ -7,18 +7,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Adm_pribadi extends CI_Model
 {
 	
-	function __construct(argument)
+	function __construct()
 	{
 		parent::__construct();		
 	}
 
 	public function get_all_debit(){
-		$query = $this->db->query("select tanggal, debit, keterangan from pengeluaran_pribadi where debit !=0");
+		$query = $this->db->query("select id_pengeluaran_pribadi,tanggal, debit, keterangan from pengeluaran_pribadi where debit !=0");
 		return $query->result_array();
 	}
 
 	public function get_all_kredit(){
-		$query = $this->db->query("select tanggal, kredit, keterangan from pengeluaran_pribadi where kredit !=0");
+		$query = $this->db->query("select id_pengeluaran_pribadi,tanggal, kredit, keterangan from pengeluaran_pribadi where kredit !=0");
 		return $query->result_array();
 
 	}

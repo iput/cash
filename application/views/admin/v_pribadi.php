@@ -34,25 +34,25 @@
                   <table class=" table table-striped table-bordered table-hover">
                     <thead>
                       <tr>
-                        <td>No</td>
-                        <td>Nama Pendapatan</td>
-                        <td>Jumlah Pendapatan</td>
+                        <td>Nama Pemasukkan</td>
+                        <td>Jumlah Pemasukkan</td>
                         <td>Tanggal Pemasukkan</td>
                         <td><span class="glyphicon glyphicon-cog"></span></td>
                       </tr>
                     </thead>
                     <tbody id="tabel_debit">
+                    <?php foreach($debit as $d):?>
                       <tr>
-                        <td>1</td>
-                        <td>ISO BALI</td>
-                        <td>Makhfud</td>
-                        <td>12000000</td>
+                        <td><?php echo $d['keterangan']?></td>
+                        <td><?php echo "Rp. ".number_format($d['debit'],2,',','.') ?></td>
+                        <td><?php echo date('d F Y', strtotime($d['tanggal'])) ?></td>
                         <td>
                           <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit"><span class="fa fa-pencil"></span></a>
                           <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class=" glyphicon glyphicon-remove"></span></a>
                         </td>
                       </tr>
-                    </tbody>
+                    <?php endforeach ?>
+                    </tbody>      
                   </table>
               </div>
               <!-- /.tab-pane -->
@@ -62,22 +62,24 @@
           <table class=" table table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <td>Tanggal</td>
+                <td>Nama Pengeluaran</td>
                 <td>Jumlah Pengeluaran</td>
-                <td>Keterangan</td>
+                <td>Tanggal</td>
                 <td><span class="glyphicon glyphicon-cog"></span></td>
               </tr>
             </thead>
             <tbody id="tabel_kredit">
+              <?php foreach ($kredit as $k):?>
               <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
+                <td><?php echo $k['keterangan']?></td>
+                <td><?php echo $k['kredit']?></td>
+                <td><?php echo $k['tanggal']?></td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_kredit"><span class="fa fa-pencil"></span></a>
                   <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="glyphicon glyphicon-remove"></span></a>
                 </td>
               </tr>
+            <?php endforeach ?>
             </tbody>
           </table>
               </div>
@@ -110,7 +112,7 @@
         <h3>Tambah Pemasukkan pribadi</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="post" action="<?php ?>">
+        <form class="form-horizontal" method="post" action="<?php echo base_url('c_pribadi/add_pribadi/debit')?>">
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukkan</label>
             <div class="col-md-6">
@@ -195,17 +197,17 @@
           <h3>Tambah Pengeluaran Pribadi</h3>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal">
+          <form class="form-horizontal" method="post" action="<?php echo base_url('c_pribadi/add_pribadi/kredit')?>">
             <div class="form-group">
               <label class="control-label col-md-4">Tanggal Pengeluaran</label>
               <div class="col-md-6">
-                <input type="date" name="edit_tanggal_pengeluaran" class="form-control">
+                <input type="date" name="tanggal_pengeluaran" class="form-control" value="<?php echo date('Y-m-d H:i:s')?>">
               </div>
             </div>
             <div class="form-group">
               <label class="control-label col-md-4">Jumlah Pengeluaran</label>
               <div class="col-md-6">
-                <input type="text" name="edit_jumlah_pengeluaran" class="form-control" id="jumlah_pengeluaran">
+                <input type="text" name="jumlah_pengeluaran" class="form-control" id="jumlah_pengeluaran">
               </div>
             </div>
             <div class="form-group">

@@ -162,7 +162,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="<?php echo base_url('C_pribadi_pemasukan'); ?>">
+          <a href="<?php echo base_url('C_pribadi'); ?>">
             <i class="fa fa-pie-chart"></i>
             <span>Pengeluaran Pribadi</span>
           </a>
