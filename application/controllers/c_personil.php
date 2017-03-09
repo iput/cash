@@ -10,6 +10,7 @@ class C_personil extends CI_controller
 	{
 		parent::__construct();
 		$this->load->model('adm_personil');
+    
 	}
 
 	public function index()

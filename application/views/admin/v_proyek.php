@@ -43,7 +43,7 @@
               </tr>
             </thead>
             <tbody id="tabel_proyek">
-            <?php foreach ($data_project as $data)?>
+            <?php foreach ($data_project as $data):?>
             <?php 
             $tgl_mulai = $data['tanggal_mulai'];
             $tgl_selesai = $data['tanggal_selesai'];
@@ -60,6 +60,7 @@
                   <a href="<?= base_url()?>c_proyek/delete_project/<?= $data['id_project']?>" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
+             <?php endforeach ?>
             </tbody>
           </table>
               </div>
@@ -78,7 +79,7 @@
               </tr>
             </thead>
             <tbody id="tabel_anggarandana">
-            <?php foreach ($suntikan_anggaran as $key)?>
+            <?php foreach ($suntikan_anggaran as $key):?>
               <tr>
                 <td><?php echo $key['nama_project']?></td>
                 <td><?php echo $key['nama_tambahan']?></td>
@@ -86,9 +87,10 @@
                 <td><?php echo date('d F Y', strtotime($key['waktu_tambahan']))?></td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP" data ="<?php echo $key['id_tambahan'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="<?= base_url()?>c_proyek/delete_suntikan/<?= $data['id_tambahan']?>" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
+               <?php endforeach ?>
             </tbody>
           </table>
               </div>
@@ -253,9 +255,9 @@
           <div class="col-md-6">
             <select class="form-control" name="nama_proyek">
             <option value="null">Pilih Nama proyek</option>
-            <?php foreach ($data_in as $data)?>            
+            <?php foreach ($data_in as $data):?>            
               <option value="<?php echo $data['id_project']?>"><?php echo $data['nama_project']?></option>
-              <?php ?>
+              <?php endforeach ?>              
             </select>
           </div>
         </div>      
@@ -306,9 +308,9 @@
           <div class="col-md-6">
             <select class="form-control" name="edit_nama_proyek">
               <option value="null">Pilih Nama proyek tujuan anggaran</option>
-              <?php foreach ($data_in as $data)?>            
+              <?php foreach ($data_in as $data):?>            
               <option value="<?php echo $data['id_project']?>"><?php echo $data['nama_project']?></option>
-              <?php ?>
+              <?php endforeach ?>
             </select>
           </div>
         </div>      

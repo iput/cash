@@ -71,8 +71,16 @@
     <div class="modal-body">
       <form class="form-horizontal">
         <div class="form-group">
+          <label class="control-label col-md-3">Nama Proyek</label>
+          <div class="col-md-8">
+            <select class="form-control" name="cb_proyek">
+              <option>Pilih Nama Proyek</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
           <label class="control-label col-md-3">Anggaran Pengeluaran</label>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <select class="form-control" name="cb_anggaran">
               <option>Pilih Anggaran proyek</option>
             </select>
@@ -80,25 +88,26 @@
         </div>
         <div class="form-group">
           <label class="control-label col-md-3">Nama Pengeluaran</label>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran" maxlength="20">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-3">Keterangan Pengeluaran</label>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <textarea class="form-control" name="ket_pengeluaran"></textarea>
           </div>
         </div>
+
         <div class="form-group">
           <label class="control-label col-md-3">Bukti Pengeluaran</label>
-          <div class="col-md-6">
-            <input type="file" name="foto_bukti" class="form-control">
+          <div class="col-md-8">
+            <input type="file" name="userfile" id="userfile">
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-3"></div>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <button type="button" class="btn btn-danger btn-flat" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;Batal</button>
             <button type="submit" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-save"></span>&nbsp;Simpan</button>
           </div>

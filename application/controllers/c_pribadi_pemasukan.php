@@ -26,4 +26,17 @@ defined('BASEPATH')OR exit('tak ada akses yang diizinkan');
 		$this->load->view('admin/v_pribadi');
 		$this->load->view('attribute/footer');
  	}
- } ?>
+
+ 	public function add_pribadi($param){
+		if ($param=="debit"){
+			$kredit ="0";
+			$debit = $this->input->post('');
+		}
+		else{
+			$debit ="0";
+			$kredit = $this->input->post('');
+		}
+
+		}
+
+ }

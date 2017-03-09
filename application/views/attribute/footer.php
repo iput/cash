@@ -50,7 +50,30 @@
 		});
 
 		$('#tabel_pp').on('click', '.btn_edit_pp', function(){
+            var id = $(this).attr('data');
 			$('#edit_pp').modal('show');
+            $.ajax({
+                type : 'ajax',
+                url : '<?php echo base_url()?>c_personil_proyek/get_personil_project',
+                method : 'get',
+                data : {id : id},
+                async : false,
+                dataType : 'json',
+                success : function(data){
+                    console.log(data);
+                    for (i=0;i<data.length;i++){
+                    $('input[name=edit_idpp]').val(data[i].id_project_personil);
+                    $('input[name=edit_cb_proyek]').val(data[i].id_project);
+                    $('input[name=edit_cb_userpp]').val(data[i].id_user);
+                    $('input[name=edit_cb_levelakses]').val(data[i].id_level);
+                        
+                    }
+                },
+                error : function(data){
+                    console.log(data);
+                    alert('gagal')
+                }
+            });
 		});
 
 		$('#tabel_proyek').on('click', '.btn_edit_proyek', function(){
@@ -79,6 +102,14 @@
                 }
             });
 		});
+        $('#tabel_debit').on('click','.btn_edit_debit', function(){
+            $('#edit_pemasukkan_pribadi').modal('show');
+
+        });
+        $('#tabel_kredit').on('click','.btn_edit_kredit', function(){
+            $('#edit_pengeluaran_pribadi').modal('show');
+
+        });
 		$('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
             var id = $(this).attr('data');
 			$('#edit_anggaran').modal('show');
@@ -107,6 +138,7 @@
 
 
 		});
+
 	});
 </script>
 <script type="text/javascript">
@@ -115,15 +147,18 @@
     $('#edit_anggaran_proyek').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
     $('#jumlah_anggaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
     $('#edit_jumlah_anggaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#jumlah_pemasukkan').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#jumlah_pengeluaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#edit_jumlah_ppemasukkan').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#edit_jumlah_ppengeluaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
     });
+
 	function isNumberKey(evt){
 		var charCode = (evt.which)? evt.which: event.keyCode
 		if (charCode > 31 && (charCode < 48 || charCode > 57))
 			return false;
 			return true;
     }
-
-
 </script>
 </body>
 </html>
