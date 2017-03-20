@@ -48,7 +48,7 @@
                         <td><?php echo date('d F Y', strtotime($d['tanggal'])) ?></td>
                         <td>
                           <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit"><span class="fa fa-pencil"></span></a>
-                          <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class=" glyphicon glyphicon-remove"></span></a>
+                          <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -72,11 +72,11 @@
               <?php foreach ($kredit as $k):?>
               <tr>
                 <td><?php echo $k['keterangan']?></td>
-                <td><?php echo $k['kredit']?></td>
-                <td><?php echo $k['tanggal']?></td>
+                <td><?php echo "Rp. ".number_format($k['kredit'],2,',','.') ?></td>
+                <td><?php echo date('d F Y', strtotime($k['tanggal'])) ?></td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_kredit"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
             <?php endforeach ?>

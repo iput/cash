@@ -16,4 +16,4 @@
  		$this->load->view('pmanager/Pm_pPendapatan');
  		$this->load->view('attribute/footer_pm'); 		
  	}
- } ?>
+ }

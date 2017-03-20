@@ -87,7 +87,7 @@
                 <td><?php echo date('d F Y', strtotime($key['waktu_tambahan']))?></td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP" data ="<?php echo $key['id_tambahan'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="<?= base_url()?>c_proyek/delete_suntikan/<?= $data['id_tambahan']?>" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="<?= base_url()?>c_proyek/delete_suntikan/<?= $key['id_tambahan']?>" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
                <?php endforeach ?>
@@ -306,9 +306,9 @@
         <div class="form-group">
           <label class="control-label col-md-3">Nama Proyek</label>
           <div class="col-md-6">
-            <select class="form-control" name="edit_nama_proyek">
+            <select class="form-control" name="edit_nama_proyek" id="edit_nama_proyek">
               <option value="null">Pilih Nama proyek tujuan anggaran</option>
-              <?php foreach ($data_in as $data):?>            
+              <?php foreach ($data_project as $data):?>            
               <option value="<?php echo $data['id_project']?>"><?php echo $data['nama_project']?></option>
               <?php endforeach ?>
             </select>

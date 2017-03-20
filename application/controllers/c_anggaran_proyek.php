@@ -25,4 +25,4 @@ defined('BASEPATH')OR exit('no direct script access allowed');
 		$this->load->view('admin/v_aproyek');
 		$this->load->view('attribute/footer');
  	}
- } ?>
+ }

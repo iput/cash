@@ -128,7 +128,7 @@
             <div class="form-group">
               <label class="control-label col-md-3">Nama Proyek</label>
               <div class="col-md-6">
-                <select class="form-control" name="edit_cb_proyek">
+                <select class="form-control" name="edit_cb_proyek" id="edit_cb_proyek">
                   <option value="null">Pilih Proyek</option>
                   <?php foreach ($nama_proyek as $proyek):?>
                   <option value="<?php echo $proyek['id_project'] ?>"><?php echo $proyek['nama_project']?></option>
@@ -139,7 +139,7 @@
             <div class="form-group">
               <label class="control-label col-md-3">Username</label>
               <div class="col-md-6">
-                <select class="form-control" name="edit_cb_userpp">
+                <select class="form-control" name="edit_cb_userpp" id="edit_cb_userpp">
                   <option value="null">Pilih Pengguna proyek</option>
                   <?php foreach ($nama_user as $user):?>
                   <option value="<?php echo $user['id_user'] ?>"><?php echo $user['nama_user']?></option>
@@ -150,7 +150,7 @@
             <div class="form-group">
               <label class="control-label col-md-3">Level akses</label>
               <div class="col-md-6">
-                <select class="form-control" name="edit_cb_levelakses">
+                <select class="form-control" name="edit_cb_levelakses" id="edit_cb_levelakses">
                   <option>Pilih Hak Akses</option>
                   <?php foreach ($level as $lv):?>
                   <option value="<?php echo $lv['id_level'] ?>"><?php echo $lv['nama_level']?></option>

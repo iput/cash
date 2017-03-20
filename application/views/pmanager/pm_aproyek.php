@@ -39,7 +39,7 @@
                 <td>12000000</td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
             </tbody>
@@ -59,38 +59,42 @@
     <!-- /.content -->
   </div>
   
+  <!-- Modal Tambah Anggaran -->
 <div class="modal fade" tabindex="-1" role="dialog" id="tambah_anggaran">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header bg-aqua">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-      <h3>Tambah anggaran pengeluaran</h3>
+      <h3>Tambah Anggaran Pengeluaran</h3>
     </div>
     <div class="modal-body">
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post" action="<?php echo base_url('pm_aproyek/add_anggaran')?>">
         <div class="form-group">
           <label class="control-label col-md-3">Nama Proyek</label>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <select class="form-control" name="nama_proyek">
-              <option value="null">Pilih Nama proyek tujuan anggaran</option>
+              <option value="null">Pilih Nama Proyek</option>
+              <?php foreach($nama_proyek as $proyek): ?>
+                <option value="<?php echo $proyek['id_project']?>"><?php echo $proyek['nama_project']?></option>
+              <?php endforeach ?>
             </select>
           </div>
         </div>      
         <div class="form-group">
           <label class="control-label col-md-3">Nama Anggaran</label>
-          <div class="col-md-6">
-            <input type="text" name="nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran" maxlength="20">
+          <div class="col-md-8">
+            <input type="text" name="nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran" maxlength="40" required="">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-3">Jumlah Anggaran</label>
-          <div class="col-md-6">
-            <input type="text" name="jumlah_anggaran" class="form-control" placeholder="Rp. ">
+          <div class="col-md-8">
+            <input type="text" name="jumlah_anggaran" id ="jumlah_anggaran" class="form-control">
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-3"></div>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <button type="button" data-dismiss="modal" class="btn btn-danger btn-flat"><span class="glyphicon glyphicon-remove"></span>&nbsp;Batal</button>
             <button type="submit" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-save"></span>&nbsp;Simpan</button>
           </div>
@@ -101,38 +105,39 @@
 </div>  
 </div>
 
+<!-- Modal Edit Anggaran-->
 <div class="modal fade" tabindex="-1" role="dialog" id="edit_anggaran">
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     <div class="modal-header bg-aqua">
       <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-      <h3>Perbarui anggaran pengeluaran</h3>
+      <h3>Perbarui Anggaran Pengeluaran</h3>
     </div>
     <div class="modal-body">
       <form class="form-horizontal">
         <div class="form-group">
           <label class="control-label col-md-3">Nama Proyek</label>
-          <div class="col-md-6">
-            <select class="form-control" name="nama_proyek">
-              <option value="null">Pilih Nama proyek tujuan anggaran</option>
+          <div class="col-md-8">
+            <select class="form-control" name="edit_nama_proyek">
+              <option value="null">Pilih Nama Proyek</option>
             </select>
           </div>
         </div>      
         <div class="form-group">
           <label class="control-label col-md-3">Nama Anggaran</label>
-          <div class="col-md-6">
-            <input type="text" name="edit_nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran" maxlength="20">
+          <div class="col-md-8">
+            <input type="text" name="edit_nama_anggaran" class="form-control" placeholder="Nama Tambahan anggaran" maxlength="40" required="">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-3">Jumlah Anggaran</label>
-          <div class="col-md-6">
-            <input type="text" name="edit_jumlah_anggaran" class="form-control" placeholder="Rp. ">
+          <div class="col-md-8">
+            <input type="text" name="edit_jumlah_anggaran" class="form-control" id="edit_jumlah_anggaran">
           </div>
         </div>
         <div class="form-group">
           <div class="col-md-3"></div>
-          <div class="col-md-6">
+          <div class="col-md-8">
             <button type="button" data-dismiss="modal" class="btn btn-danger btn-flat"><span class="glyphicon glyphicon-remove"></span>&nbsp;Batal</button>
             <button type="submit" class="btn btn-info btn-flat"><span class="glyphicon glyphicon-refresh"></span>&nbsp;Perbarui</button>
           </div>

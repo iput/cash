@@ -9,6 +9,7 @@
 <!-- ./wrapper -->
 <!-- jQuery 2.2.3 -->
 <script src="<?php echo base_url('assets/plugins/jQuery/jquery-2.2.3.min.js'); ?>"></script>
+
 <!-- Bootstrap 3.3.6 -->
 <script src="<?php echo base_url('assets/bootstrap/js/bootstrap.min.js'); ?>"></script>
 <!-- SlimScroll -->
@@ -63,9 +64,9 @@
                     console.log(data);
                     for (i=0;i<data.length;i++){
                     $('input[name=edit_idpp]').val(data[i].id_project_personil);
-                    $('input[name=edit_cb_proyek]').val(data[i].id_project);
-                    $('input[name=edit_cb_userpp]').val(data[i].id_user);
-                    $('input[name=edit_cb_levelakses]').val(data[i].id_level);
+                    $("#edit_cb_proyek").val(data[i].id_project)
+                    $('#edit_cb_userpp').val(data[i].id_user);
+                    $('#edit_cb_levelakses').val(data[i].id_level_user);
                         
                     }
                 },
@@ -124,7 +125,7 @@
                     console.log(data);
                     for (i=0;i<data.length;i++){
                     $('input[name=edit_idsuntikan]').val(data[i].id_tambahan);
-                    $('input[name=edit_nama_proyek]').val(data[i].id_project);
+                    $('#edit_nama_proyek').val(data[i].id_project);
                     $('input[name=edit_nama_anggaran]').val(data[i].nama_tambahan);
                     $('input[name=edit_jumlah_anggaran]').val(data[i].jumlah_tambahan);
                     $('input[name=waktu_input]').val(data[i].waktu_tambahan);    

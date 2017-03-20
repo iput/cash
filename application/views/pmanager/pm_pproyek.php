@@ -45,7 +45,7 @@
                 <td>a</td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pengeluaranP"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
             </tbody>
@@ -99,7 +99,7 @@
         <div class="form-group">
           <label class="control-label col-md-4">Jumlah Pengeluaran</label>
           <div class="col-md-8">
-            <input type="text" name="jumlah_pengeluaran" class="form-control" placeholder="Rp. ">
+            <input type="text" name="jumlah_pengeluaran" class="form-control" id="jumlah_pengeluaran">
           </div>
         </div>
         <div class="form-group">
@@ -110,8 +110,8 @@
         </div>
         <div class="form-group">
           <label class="control-label col-md-4">Bukti Pengeluaran</label>
-          <div class="col-md-8">
-            <input type="file" name="foto_bukti" class="form-control">
+            <div class="col-md-8">
+            <input type="file" name="userfile" id="userfile">
           </div>
         </div>
         <div class="form-group">
@@ -127,6 +127,7 @@
   </div>
   </div>
 
+<!-- Modal Edit -->
   <div class="modal fade" tabindex="-1" role="dialog" id="edit_pengeluaran_proyek">   
   <div class="modal-dialog" role="document">
   <div class="modal-content">
@@ -139,15 +140,15 @@
         <div class="form-group">
           <label class="control-label col-md-4">Nama Proyek</label>
           <div class="col-md-8">
-            <select class="form-control" name="cb_anggaran">
-              <option>Pilih nama proyek</option>
+            <select class="form-control" name="edit_cb_anggaran">
+              <option>Pilih Nama proyek</option>
             </select>
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-4">Nama Anggaran</label>
           <div class="col-md-8">
-            <select class="form-control" name="nama_penggunaP">
+            <select class="form-control" name="edit_nama_penggunaP">
               <option>Pilih Anggaran proyek</option>
             </select>
           </div>
@@ -155,13 +156,13 @@
         <div class="form-group">
           <label class="control-label col-md-4">Nama Pengeluaran</label>
           <div class="col-md-8">
-            <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran" maxlength="20">
+            <input type="text" name="edit_nama_pengeluaran" class="form-control" placeholder="nama pengeluaran" maxlength="20">
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-4">Jumlah Pengeluaran</label>
           <div class="col-md-8">
-            <input type="text" name="jumlah_pengeluaran" class="form-control" placeholder="Rp. ">
+            <input type="text" name="edit_jumlah_pengeluaran" class="form-control" id="edit_jumlah_pengeluaran">
           </div>
         </div>        
         <div class="form-group">
@@ -173,7 +174,7 @@
         <div class="form-group">
           <label class="control-label col-md-4">Bukti Pengeluaran</label>
           <div class="col-md-8">
-            <input type="file" name="foto_bukti" class="form-control">
+            <input type="file" name="userfile" id="userfile">
           </div>
         </div>
         <div class="form-group">
