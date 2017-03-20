@@ -271,3 +271,14 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    $(function() {
+      $('#tabel_debit').on('click','.btn_edit_debit', function(){
+        $('#edit_pemasukkan_pribadi').modal('show');
+        });
+
+      $('#tabel_kredit').on('click','.btn_edit_kredit', function(){
+        $('#edit_pengeluaran_pribadi').modal('show');
+        });
+    });
+  </script>

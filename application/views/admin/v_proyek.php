@@ -343,3 +343,62 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(function(){
+    $('#tabel_proyek').on('click', '.btn_edit_proyek', function(){
+            var id = $(this).attr('data');
+      $('#edit_proyek').modal('show');            
+            $.ajax({
+                type : 'ajax',
+                url : '<?php echo base_url()?>c_proyek/get_project',
+                method : 'get',
+                data : {id : id},
+                async : false,
+                dataType : 'json',
+                success : function(data){
+                    console.log(data);
+                    for (i=0;i<data.length;i++){
+                    $('input[name=edit_idproyek]').val(data[i].id_project);
+                    $('input[name=edit_nama_proyek]').val(data[i].nama_project);
+                    $('input[name=edit_anggaran_proyek]').val(data[i].anggaran);
+                    $('input[name=edit_tgl_mulai]').val(data[i].tanggal_mulai);
+                    $('input[name=edit_tgl_selesai]').val(data[i].tanggal_selesai);    
+                    }
+                },
+                error : function(data){
+                    console.log(data);
+                    alert('gagal')
+                }
+            });
+    });
+
+        $('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
+            var id = $(this).attr('data');
+      $('#edit_anggaran').modal('show');
+            $.ajax({
+                type : 'ajax',
+                url : '<?php echo base_url()?>c_proyek/get_suntikan',
+                method : 'get',
+                data : {id : id},
+                async : false,
+                dataType : 'json',
+                success : function(data){
+                    console.log(data);
+                    for (i=0;i<data.length;i++){
+                    $('input[name=edit_idsuntikan]').val(data[i].id_tambahan);
+                    $('#edit_nama_proyek').val(data[i].id_project);
+                    $('input[name=edit_nama_anggaran]').val(data[i].nama_tambahan);
+                    $('input[name=edit_jumlah_anggaran]').val(data[i].jumlah_tambahan);
+                    $('input[name=waktu_input]').val(data[i].waktu_tambahan);    
+                    }
+                },
+                error : function(data){
+                    console.log(data);
+                    alert('gagal');
+                }
+        });
+
+
+    });
+  });
+</script>

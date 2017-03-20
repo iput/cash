@@ -27,17 +27,19 @@
                 <td>No</td>
                 <td>Nama Pengeluaran</td>
                 <td>waktu pengeluaran</td>
+                <td>Jumlah Pengeluaran</td>
                 <td>Keterangan</td>
                 <td>bukti</td>
                 <td><span class="glyphicon glyphicon-cog"></span></td>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tabel_pengeluaran_proyek">
               <tr>
                 <td>1</td>
                 <td>ISO BALI</td>
                 <td>Makhfud</td>
                 <td>12000000</td>
+                <td>Makan</td>
                 <td>a</td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pengeluaranP"><span class="fa fa-pencil"></span></a>
@@ -93,6 +95,12 @@
           </div>
         </div>
         <div class="form-group">
+          <label class="control-label col-md-3">Jumlah Pengeluaran</label>
+          <div class="col-md-8">
+            <input type="text" name="txtJumlah" class="form-control" id="jumlah_pengeluaranP">
+          </div>
+        </div>
+        <div class="form-group">
           <label class="control-label col-md-3">Keterangan Pengeluaran</label>
           <div class="col-md-8">
             <textarea class="form-control" name="ket_pengeluaran"></textarea>
@@ -141,6 +149,12 @@
             <input type="text" name="nama_pengeluaran" class="form-control" placeholder="nama pengeluaran" maxlength="20">
           </div>
         </div>
+        <div class="form-group">
+          <label class="control-label col-md-3">Jumlah Pengeluaran</label>
+          <div class="col-md-8">
+            <input type="text" name="txtJumlah" class="form-control" id="edit_jumlah_pengeluaranP">
+          </div>
+        </div>        
         <div class="form-group">
           <label class="control-label col-md-3">Keterangan Pengeluaran</label>
           <div class="col-md-6">

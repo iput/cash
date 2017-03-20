@@ -170,3 +170,33 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    $(function(){
+          $('#tabel_pp').on('click', '.btn_edit_pp', function(){
+            var id = $(this).attr('data');
+      $('#edit_pp').modal('show');
+            $.ajax({
+                type : 'ajax',
+                url : '<?php echo base_url()?>c_personil_proyek/get_personil_project',
+                method : 'get',
+                data : {id : id},
+                async : false,
+                dataType : 'json',
+                success : function(data){
+                    console.log(data);
+                    for (i=0;i<data.length;i++){
+                    $('input[name=edit_idpp]').val(data[i].id_project_personil);
+                    $("#edit_cb_proyek").val(data[i].id_project)
+                    $('#edit_cb_userpp').val(data[i].id_user);
+                    $('#edit_cb_levelakses').val(data[i].id_level_user);
+                        
+                    }
+                },
+                error : function(data){
+                    console.log(data);
+                    alert('gagal')
+                }
+            });
+    });
+    });
+  </script>
