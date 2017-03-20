@@ -7,6 +7,7 @@
   </footer>
 </div>
 <!-- ./wrapper -->
+<<<<<<< HEAD
 <!-- jQuery 2.2.3 -->
 <script src="<?php echo base_url('assets/plugins/jQuery/jquery-2.2.3.min.js'); ?>"></script>
 <!-- Select2-->
@@ -22,6 +23,9 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url('assets/dist/js/demo.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url()."assets/plugins/jQueryMaskMoney/jquery.maskMoney.min.js"; ?>"></script>
+=======
+
+>>>>>>> a8b3132bcdd04b9564c0b47a2aef18601ee63689
 <script type="text/javascript">
 	$(function() {
 		$(".select2").select2();
