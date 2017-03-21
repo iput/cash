@@ -40,7 +40,7 @@
                 
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_personil" data="<?php echo $pp['id_project_personil'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Yakin akan menghapus data ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="<?= base_url()?>pm_personil/delete_project_personil/<?= $pp['id_project_personil']?>" class="btn btn-danger btn-flat" onclick="return confirm('Yakin akan menghapus data ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
                <?php endforeach ?>

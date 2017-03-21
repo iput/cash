@@ -20,28 +20,28 @@
       <div class="row">
         <div class="col-xs-12">
         <button type="button" class="btn btn-primary btn-flat" data-toggle="modal" data-target="#tambah_anggaran"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;Tambah anggaran</button>
-        <h3>Data Anggaran</h3>
+        <h3>Data Anggaran Pengeluaran</h3>
           <table class=" table table-striped table-bordered table-hover">
             <thead>
               <tr>
-                <td>No</td>
+                <td>Nama Proyek</td>
                 <td>Nama Anggaran</td>
                 <td>Jumlah Anggaran</td>
-                <td>Waktu Penambahan anggaran</td>
                 <td><span class="glyphicon glyphicon-cog"></span></td>
               </tr>
             </thead>
             <tbody id="tabel_anggarandana">
+            <?php foreach($nm_anggaran as $ag):?>
               <tr>
-                <td>1</td>
-                <td>ISO BALI</td>
-                <td>Makhfud</td>
-                <td>12000000</td>
+                <td><?php echo $ag['nama_project']?></td>
+                <td><?php echo $ag['nama_pengeluaran']?></td>
+                <td><?php echo $ag['anggaran']?></td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP"><span class="fa fa-pencil"></span></a>
                   <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
+               <?php endforeach ?>
             </tbody>
           </table>
         </div>

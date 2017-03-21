@@ -25,9 +25,17 @@ class Prm_aproyek extends CI_Model
 		return $result;
 	}
 
-	public function get_all_anggaran(){
-
+	public function get_all_anggaran($id_user){
+		$this->db->select('id_anggaran_pengeluaran, nama_pengeluaran, anggaran_pengeluaran.anggaran, project.nama_project');
+		$this->db->from('anggaran_pengeluaran');
+		$this->db->where('project_personil.id_user', $id_user);
+		$this->db->where('project_personil.id_level_user', 3);
+		$this->db->join('project_personil', 'project_personil.id_project=anggaran_pengeluaran.id_project');
+		$this->db->join('project', 'project.id_project=anggaran_pengeluaran.id_project and project_personil.id_project=project.id_project');
+		$query = $this->db->get();
+		return $query->result_array();
 	}
+
 
 	public function update_anggaran(){
 		

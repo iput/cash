@@ -35,11 +35,22 @@ class Prm_personil extends CI_Model
 	}
 
 	public function update_project_personil($tabel, $data, $param){
-		$this->db->where();
+		$this->db->where('id_project_personil', $param);
+		$this->db->update($tabel, $data);
+		if ($this->db->affected_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
 	}
 
 	public function delete_project_personil($param){
-
+		$this->db->where('id_project_personil', $param);
+    	$this->db->delete('project_personil');
+        if ($this->db->affected_rows() > 0) {
+        return TRUE;
+        }
+        return FALSE;
 	}
 
 	public function get_all_PP(){

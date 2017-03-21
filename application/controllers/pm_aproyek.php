@@ -13,7 +13,8 @@
 
  	public function index()
  	{
- 		$data['nama_proyek']=$this->prm_aproyek->get_pm_proyek(2);
+ 		$data['nama_proyek']=$this->prm_aproyek->get_pm_proyek(1);
+ 		$data['nm_anggaran']=$this->prm_aproyek->get_all_anggaran(1);
  		$this->load->view('attribute/header_pm');
  		$this->load->view('pmanager/Pm_aproyek', $data);
  		$this->load->view('attribute/footer_pm');

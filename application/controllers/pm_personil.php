@@ -15,7 +15,7 @@
 
  	public function index()
  	{
- 		$data['nama_proyek'] = $this->prm_personil->get_pm_proyek(2);
+ 		$data['nama_proyek'] = $this->prm_personil->get_pm_proyek(1);
  		$data['nama_personil'] = $this->prm_personil->get_all_personil();
  		$data['level']= $this->adm_personil_proyek->get_all_level();
  		$data['project_personil'] = $this->prm_personil->get_all_PP();
@@ -47,6 +47,29 @@
  	$id = $this->input->get('id');
 	$data = $this->prm_personil->get_project_personil($id);
 	echo json_encode($data);		
+ 	}
+
+ 	public function update_project_personil(){
+ 		$id = $this->input->post('edit_id_pp');
+ 		$field = array(
+ 			'id_project' => $this->input->post('edit_nama_proyek'),
+ 			'id_user' => $this->input->post('edit_nama_pengguna'),
+ 			'id_level_user' => $this->input->post('cb_levelakses')
+ 			);
+ 		$result=$this->prm_personil->update_project_personil('project_personil', $field, $id);
+ 		if ($result>=0){
+ 			redirect('pm_personil/index');
+ 		}
+ 		else{
+ 			redirect('pm_index');
+ 		}
+
+ 	}
+ 	public function delete_project_personil($id){
+ 		$result = $this->prm_personil->delete_project_personil($id);
+ 		if($result>=1){
+ 	redirect('pm_proyek/index');
+ 		}
  	}
 
 
