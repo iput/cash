@@ -38,7 +38,38 @@
  		}
  		else{
  			
+ 		}	 
+ 	}
+
+ 	public function get_anggaran(){
+ 		$id=$this->input->get('id');
+ 		$data = $this->prm_aproyek->get_anggaran($id);
+ 		echo json_encode($data);
+ 	}
+
+ 	public function update_anggaran_pengeluaran(){
+ 		$id=$this->input->post('edit_ap');
+ 		$anggaran1 = $this->input->post('edit_jumlah_anggaran');
+ 		$anggaran2 = str_replace("Rp. ", "", $anggaran1);
+ 		$anggaran = str_replace(".","", $anggaran2);
+ 		$field = array(
+ 			'id_project' => $this->input->post('edit_nama_proyek'),
+ 			'nama_pengeluaran' => $this->input->post('edit_nama_anggaran'),
+ 			'anggaran' => $anggaran
+ 			);
+ 		$result = $this->prm_aproyek->update_anggaran_pengeluaran('anggaran_pengeluaran', $field, $id);
+ 		if ($result>=0){
+ 			redirect('pm_aproyek/index');
  		}
- 			 
+ 		else{
+ 			redirect('pm_index');
+ 		}
+ 	}
+
+ 	public function delete_anggaran_pengeluaran($id){
+ 		$result = $this->prm_aproyek->delete_anggaran_pengeluaran($id);
+ 		if($result>=1){
+ 		redirect('pm_aproyek/index');
+ 		}
  	}
  }

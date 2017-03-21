@@ -35,9 +35,9 @@
               <tr>
                 <td><?php echo $ag['nama_project']?></td>
                 <td><?php echo $ag['nama_pengeluaran']?></td>
-                <td><?php echo $ag['anggaran']?></td>
+                <td><?php echo "Rp. ".number_format($ag['anggaran'],2,',','.') ?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP"><span class="fa fa-pencil"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP" data="<?php echo $ag['id_anggaran_pengeluaran'];?>"><span class="fa fa-pencil"></span></a>
                   <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
@@ -114,12 +114,16 @@
       <h3>Perbarui Anggaran Pengeluaran</h3>
     </div>
     <div class="modal-body">
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post" action="<?php echo base_url('pm_aproyek/update_anggaran_pengeluaran')?>">
+      <input type="hidden" name="edit_ap">
         <div class="form-group">
           <label class="control-label col-md-3">Nama Proyek</label>
           <div class="col-md-8">
-            <select class="form-control" name="edit_nama_proyek">
+            <select class="form-control" name="edit_nama_proyek" id="edit_nama_proyek">
               <option value="null">Pilih Nama Proyek</option>
+              <?php foreach($nama_proyek as $proyek): ?>
+                <option value="<?php echo $proyek['id_project']?>"><?php echo $proyek['nama_project']?></option>
+              <?php endforeach ?>
             </select>
           </div>
         </div>      
@@ -146,5 +150,41 @@
     </div>
   </div>
 </div>
-  
 </div>
+<script type="text/javascript">
+ $(function(){
+$('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
+      var id = $(this).attr('data');
+      $('#edit_anggaran').modal('show');
+      $.ajax({
+        type: 'ajax',
+        url: '<?php echo base_url()?>pm_aproyek/get_anggaran',
+        method: 'get',
+        data: {id : id},
+        async: false,
+        dataType: 'json',
+        success: function(data){
+          console.log(data);
+          for(i=0;i<data.length;i++){
+            $('input[name=edit_ap]').val(data[i].id_anggaran_pengeluaran);
+            $('#edit_nama_proyek').val(data[i].id_project);
+            $('input[name=edit_nama_anggaran]').val(data[i].nama_pengeluaran);
+            $('input[name=edit_jumlah_anggaran]').val(data[i].anggaran);
+          }
+        },
+        error: function(fafa){
+          console.log(fafa);
+          alert('gagal');
+        }
+      });
+
+    });
+ }); 
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#jumlah_anggaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#edit_jumlah_anggaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+  });
+</script>

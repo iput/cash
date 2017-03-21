@@ -44,15 +44,11 @@
 		$('#tabel_proyek').on('click', '.btn_edit_proyek', function(){
 			$('#edit_proyek').modal('show');
 		});
-		$('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
-			$('#edit_anggaran').modal('show');
-		});
+		
 	});
 </script>
 <script type="text/javascript">
 	$(document).ready(function(){
-		$('#jumlah_anggaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
-		$('#edit_jumlah_anggaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
 		$('#jumlah_pengeluaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
 		$('#jumlah_pengeluaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
 	});

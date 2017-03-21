@@ -37,7 +37,29 @@ class Prm_aproyek extends CI_Model
 	}
 
 
-	public function update_anggaran(){
-		
+	public function update_anggaran_pengeluaran($tabel, $data, $param){
+		$this->db->where('id_anggaran_pengeluaran', $param);
+		$this->db->update($tabel, $data);
+		 if ($this->db->affected_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+	}
+
+	public function get_anggaran($id){
+		$query = $this->db->query('select * from anggaran_pengeluaran where id_anggaran_pengeluaran='.$id);
+		return $query -> result_array();
+	}
+
+	public function delete_anggaran_pengeluaran($id){
+		$this->db->where('id_anggaran_pengeluaran', $id);
+		$this->db->delete('anggaran_pengeluaran');
+		if ($this->db->affected_rows() > 0) {
+        return TRUE;
+        }
+        return FALSE;
+
 	}
 }
