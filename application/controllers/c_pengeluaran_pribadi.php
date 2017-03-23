@@ -9,6 +9,7 @@ defined('BASEPATH')OR exit('no direct script access allowed');
  	function __construct()
  	{
  		parent::__construct();
+ 		$this->load->model('adm_pribadi', 'adm');
  	}
 
  	public function index()
@@ -25,5 +26,11 @@ defined('BASEPATH')OR exit('no direct script access allowed');
 		$this->load->view('attribute/header', $data);
 		$this->load->view('admin/v_ppribadi');
 		$this->load->view('attribute/footer');
+ 	}
+
+ 	public function editPengeluaranP()
+ 	{
+ 		$data = $this->adm->getDataPengeluaran();
+ 		echo json_encode($data);
  	}
  } ?>

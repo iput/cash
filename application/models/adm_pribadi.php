@@ -39,6 +39,11 @@ class Adm_pribadi extends CI_Model
 
 	}
 
+	public function GetDatapengeluaran()
+	{
+		
+	}
+
 	public function delete_pribadi($id){
 		$this->db->where('id_pengeluaran_pribadi', $id);
 		$this->db->delete('pengeluaran_pribadi');
