@@ -24,13 +24,28 @@ defined('BASEPATH')OR exit('no direct script access allowed');
 		$data['stat8']="";
 		$data['stat9']="";
 		$this->load->view('attribute/header', $data);
-		$this->load->view('admin/v_ppribadi');
+		$this->load->view('admin/v_pribadi');
 		$this->load->view('attribute/footer');
  	}
 
- 	public function editPengeluaranP()
+ 	public function editPemasukanP()
  	{
  		$data = $this->adm->getDataPengeluaran();
  		echo json_encode($data);
+ 	}
+ 	public function updatePemasukanPribadi()
+ 	{
+ 		$anggaran = $this->input->post('edit_jumlah_ppemasukkan');
+ 		$nAnggaran = str_replace("Rp.", "", $anggaran);
+ 		$AnggaranN	= str_replace(".", "", $nAnggaran);
+ 		$dataIn = array(
+ 			'tanggal'=> $this->input->post('edit_tanggal_pemasukan'),
+ 			'kredit'=>'0',
+ 			'debit'=>$AnggaranN,
+ 			'keterangan'=>$this->input->post('edit_keterangan_pemasukkan'));
+ 		$data = $this->adm->updatePemasukanPribadi($dataIn);
+ 		if ($data>=0) {
+ 			redirect('c_pribadi');
+ 		}
  	}
  } ?>

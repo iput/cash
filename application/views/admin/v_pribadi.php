@@ -116,7 +116,7 @@
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukkan</label>
             <div class="col-md-6">
-              <input type="date" name="tgl_pemasukkan" class="form-control" value="<?php echo date('Y-m-d H:i:s');?>">
+              <input type="date" id="tgl_pemasukkan" name="tgl_pemasukkan" class="form-control">
             </div>
           </div>        
           <div class="form-group">
@@ -153,19 +153,19 @@
         <h3>Edit Pemasukkan Pribadi</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" method="POST" action="" id="form_edit_pemasukan">
+        <form class="form-horizontal" method="POST" action="<?php echo base_url('c_pengeluaran_pribadi/updatePemasukanPribadi') ?>" id="form_edit_pemasukan">
         <input type="hidden" name="edit_idpribadi" value="0">
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukkan</label>
             <div class="col-md-6">
-              <input type="date" name="edit_tanggal_pemasukan" class="form-control">
+              <input type="date"  id="edit_tanggal_pemasukan" name="edit_tanggal_pemasukan" class="form-control">
             </div>
           </div>        
           <div class="form-group">
             <label class="control-label col-md-4">Jumlah Pemasukkan</label>
             <div class="col-md-6">
               <input type="text" name="edit_jumlah_ppemasukkan"
-              id="edit_jumlah_ppemasukkan" class="form-control">
+              class="form-control">
             </div>
           </div>
           <div class="form-group">
@@ -276,7 +276,6 @@
       $('#tabel_debit').on('click','.btn_edit_debit', function(){
         var id = $(this).attr('data');
         $('#edit_pemasukkan_pribadi').modal('show');
-          $('#form_edit_pemasukan').attr('action','c_pengeluaran_pribadi/UpdatePemasukanPribadi');
           $.ajax({
             type : 'ajax',
             method : 'get',
@@ -285,7 +284,7 @@
             async : false,
             dataType : 'json',
             success: function(data){
-              $('input[name=edit_pemasukkan_pribadi]').val(data.debit);
+              $('input[name=edit_jumlah_ppemasukkan]').val(data.debit);
               $('input[name=edit_tanggal_pemasukan]').val(data.tanggal);
               $('textarea[name=edit_keterangan_pemasukkan]').val(data.keterangan);
               $('input[name=edit_idpribadi]').val(data.id_pengeluaran_pribadi);

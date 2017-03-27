@@ -17,6 +17,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/_all-skins.min.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets//plugins/datepicker/datepicker3.css') ?>">
   <!-- jQuery 2.2.3 -->
 <script type="text/javascript" src="<?php echo base_url('assets/plugins/jQuery/jquery-2.2.3.min.js'); ?>"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -30,6 +31,7 @@
 <!-- AdminLTE for demo purposes -->
 <script type="text/javascript" src="<?php echo base_url('assets/dist/js/demo.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url() . "assets/plugins/jQueryMaskMoney/jquery.maskMoney.min.js"; ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/plugins/datepicker/bootstrap-datepicker.js') ?>"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
