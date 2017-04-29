@@ -13,8 +13,8 @@
 
  	public function index()
  	{
- 		$this->load->view('attribute');
- 		$this->load->view('index');
- 		$this->load->view('attribute');
+ 		$this->load->view('attribute/header_user');
+ 		$this->load->view('user/home');
+ 		$this->load->view('attribute/footer_user');
  	}
  } ?>
