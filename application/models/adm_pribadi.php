@@ -39,6 +39,30 @@ class Adm_pribadi extends CI_Model
 
 	}
 
+	public function GetDatapengeluaran()
+	{
+		$id = $this->input->get('id');
+		$this->db->where('id_pengeluaran_pribadi', $id);
+		$data = $this->db->get('pengeluaran_pribadi');
+		if ($data->num_rows()>0) {
+			return $data->row();
+		}else{
+			return false;
+		}
+	}
+
+	public function updatePemasukanPribadi($data)
+	{
+		$id = $this->input->post('edit_idpribadi');
+		$this->db->where('id_pengeluaran_pribadi', $id);
+		$this->db->update('pengeluaran_pribadi', $data);
+		if ($this->db->affected_rows()>0) {
+			return true;
+		}else{
+			return false;
+		}
+	}
+
 	public function delete_pribadi($id){
 		$this->db->where('id_pengeluaran_pribadi', $id);
 		$this->db->delete('pengeluaran_pribadi');
@@ -50,9 +74,13 @@ class Adm_pribadi extends CI_Model
         }
 
 	}
+<<<<<<< HEAD
 
 	public function get_pribadi($id){
 		$query = $this->db->query('select * from pengeluaran_pribadi where id_pengeluaran_pribadi='.$id);
 		return $query->result_array();
 	}
+=======
+	
+>>>>>>> 61a5261a11abf548d81b284ba4d98294cfd21b4d
 }

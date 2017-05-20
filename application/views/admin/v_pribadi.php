@@ -47,8 +47,13 @@
                         <td><?php echo "Rp. ".number_format($d['debit'],2,',','.') ?></td>
                         <td><?php echo date('d F Y', strtotime($d['tanggal'])) ?></td>
                         <td>
+<<<<<<< HEAD
                           <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit" data="<?php echo $d['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
                           <a href="<?= base_url()?>c_pribadi/delete_pribadi/<?= $d['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
+=======
+                          <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit" data="<?php echo $d['id_pengeluaran_pribadi'] ?>"><span class="fa fa-pencil"></span></a>
+                          <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
+>>>>>>> 61a5261a11abf548d81b284ba4d98294cfd21b4d
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -116,7 +121,7 @@
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukkan</label>
             <div class="col-md-6">
-              <input type="date" name="tgl_pemasukkan" class="form-control" value="<?php echo date('Y-m-d H:i:s');?>">
+              <input type="date" id="tgl_pemasukkan" name="tgl_pemasukkan" class="form-control">
             </div>
           </div>        
           <div class="form-group">
@@ -153,19 +158,24 @@
         <h3>Edit Pemasukkan Pribadi</h3>
       </div>
       <div class="modal-body">
+<<<<<<< HEAD
         <form class="form-horizontal" method="post" action="<?php echo base_url('c_pribadi/update_pribadi/debit')?>">
         <input type="hidden" name="edit_idpribadi">
+=======
+        <form class="form-horizontal" method="POST" action="<?php echo base_url('c_pengeluaran_pribadi/updatePemasukanPribadi') ?>" id="form_edit_pemasukan">
+        <input type="hidden" name="edit_idpribadi" value="0">
+>>>>>>> 61a5261a11abf548d81b284ba4d98294cfd21b4d
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukkan</label>
             <div class="col-md-6">
-              <input type="date" name="edit_tanggal_pemasukan" class="form-control">
+              <input type="date"  id="edit_tanggal_pemasukan" name="edit_tanggal_pemasukan" class="form-control">
             </div>
           </div>        
           <div class="form-group">
             <label class="control-label col-md-4">Jumlah Pemasukkan</label>
             <div class="col-md-6">
               <input type="text" name="edit_jumlah_ppemasukkan"
-              id="edit_jumlah_ppemasukkan" class="form-control">
+              class="form-control">
             </div>
           </div>
           <div class="form-group">
@@ -276,6 +286,7 @@
       $('#tabel_debit').on('click','.btn_edit_debit', function(){
         var id = $(this).attr('data');
         $('#edit_pemasukkan_pribadi').modal('show');
+<<<<<<< HEAD
         $.ajax({
           type: 'ajax',
           url: '<?php echo base_url()?>c_pribadi/get_pribadi',
@@ -298,6 +309,25 @@
             alert('gagal');
           }
         });
+=======
+          $.ajax({
+            type : 'ajax',
+            method : 'get',
+            url : '<?php echo base_url('c_pengeluaran_pribadi/editPemasukanP') ?>',
+            data : {id: id},
+            async : false,
+            dataType : 'json',
+            success: function(data){
+              $('input[name=edit_jumlah_ppemasukkan]').val(data.debit);
+              $('input[name=edit_tanggal_pemasukan]').val(data.tanggal);
+              $('textarea[name=edit_keterangan_pemasukkan]').val(data.keterangan);
+              $('input[name=edit_idpribadi]').val(data.id_pengeluaran_pribadi);
+            },
+            error: function (){
+              alert('data tidak bisa di tampilkan');
+            }
+          });
+>>>>>>> 61a5261a11abf548d81b284ba4d98294cfd21b4d
         });
 
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Admin page Petty Cash</title>
+  <title>Manajer page Petty Cash</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -17,7 +17,8 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url('assets/dist/css/skins/_all-skins.min.css'); ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets//plugins/datepicker/datepicker3.css') ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/select2/select2.min.css')?>">
+
   <!-- jQuery 2.2.3 -->
 <script type="text/javascript" src="<?php echo base_url('assets/plugins/jQuery/jquery-2.2.3.min.js'); ?>"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -31,7 +32,7 @@
 <!-- AdminLTE for demo purposes -->
 <script type="text/javascript" src="<?php echo base_url('assets/dist/js/demo.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url() . "assets/plugins/jQueryMaskMoney/jquery.maskMoney.min.js"; ?>"></script>
-<script type="text/javascript" src="<?php echo base_url('assets/plugins/datepicker/bootstrap-datepicker.js') ?>"></script>
+<script type="text/javascript" src="<?php echo base_url() . "assets/plugins/select2/select2.full.min.js";?>"></script>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -151,35 +152,36 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">NAVIGASI UTAMA</li>
-        <li class="treeview <?php echo $stat1; ?>">
-          <a href="<?php echo base_url('C_index'); ?>">
+        <li class="treeview ">
+          <a href="#">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>
         <li class="treeview">
-          <a href="<?php echo base_url('C_personil/index'); ?>">
-            <i class="fa fa-files-o"></i>
-            <span>Personil</span>
-          </a>
-            
-        </li>
-        <li class="treeview">
           <a href="#">
-            <i class="fa fa-share"></i> <span>Proyek</span>
+            <i class="fa fa-share"></i> <span>Pengeluaran</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('C_proyek'); ?>"><i class="fa fa-circle-o"></i> Data Proyek</a></li>
-            <li><a href="<?php echo base_url('C_personil_proyek/index'); ?>"><i class="fa fa-circle-o <?php echo $stat3; ?>"></i> Personil Proyek</a></li>
-            <li><a href="<?php echo base_url('c_pengeluaran_proyek'); ?>"><i class="fa fa-circle-o"></i> Pengeluaran Proyek</a></li>
+          <li><a href="#">
+            <i class="fa fa-circle-o"></i>
+            <span>Proyek</span>
+          </a>
+        </li>
+        <li class="treeview-menu">
+          <a href="#">
+            <i class="fa fa-circle-o"></i>
+            <span>Pribadi</span>
+          </a>
+        </li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="<?php echo base_url('C_pribadi'); ?>">
+          <a href="#">
             <i class="fa fa-pie-chart"></i>
-            <span>Pengeluaran Pribadi</span>
+            <span>Setting</span>
           </a>
         </li>
         <li class="treeview">
