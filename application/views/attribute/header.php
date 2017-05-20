@@ -150,7 +150,7 @@
       <ul class="sidebar-menu">
         <li class="header">NAVIGASI UTAMA</li>
         <li class="treeview <?php echo $stat1; ?>">
-          <a href="<?php echo base_url('Welcome/index'); ?>">
+          <a href="<?php echo base_url('C_index'); ?>">
             <i class="fa fa-dashboard"></i> <span>Beranda</span>
           </a>
         </li>

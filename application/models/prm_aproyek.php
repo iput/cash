@@ -26,7 +26,7 @@ class Prm_aproyek extends CI_Model
 	}
 
 	public function get_all_anggaran($id_user){
-		$this->db->select('id_anggaran_pengeluaran, nama_pengeluaran, anggaran_pengeluaran.anggaran, project.nama_project');
+		$this->db->select('id_anggaran_pengeluaran, nama_anggaran, anggaran_pengeluaran.anggaran, project.nama_project');
 		$this->db->from('anggaran_pengeluaran');
 		$this->db->where('project_personil.id_user', $id_user);
 		$this->db->where('project_personil.id_level_user', 3);

@@ -15,7 +15,8 @@
 
  	public function index()
  	{
- 		$data['nama_proyek'] = $this->prm_personil->get_pm_proyek(1);
+ 		$id = $this->session->userdata('idUser');
+ 		$data['nama_proyek'] = $this->prm_personil->get_pm_proyek($id);
  		$data['nama_personil'] = $this->prm_personil->get_all_personil();
  		$data['level']= $this->adm_personil_proyek->get_all_level();
  		$data['project_personil'] = $this->prm_personil->get_all_PP();

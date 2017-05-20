@@ -56,8 +56,8 @@
                     <select class ="form-control" name="combo_pengguna" id="cb_user">
                     <option value="null">Pilih Nama Pengguna</option>
                     <option value="1">Admin</option>
-                    <option value="2">PM </option>
-                    <option value="3">User</option> 
+                    <option value="2">User </option>
+                    <option value="3">PM</option> 
                     </select>
                     </div>
                     <div class="row">

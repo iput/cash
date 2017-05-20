@@ -79,7 +79,7 @@
         <h3>Tambah personil Baru</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" id="form_tambah_personil" method="POST" action="<?php echo base_url('c_personil/add_personil');?>">
+        <form class="form-horizontal" id="form_tambah_personil" method="POST" action="<?php echo base_url('c_personil/add_user');?>">
           <div class="form-group">
             <label class="control-label col-md-3">Nama User</label>
             <div class="col-md-6">

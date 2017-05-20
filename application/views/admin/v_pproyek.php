@@ -71,19 +71,30 @@
       <h3>Tambah Pengeluaran proyek</h3>
     </div>
     <div class="modal-body">
-      <form class="form-horizontal">
+      <form class="form-horizontal" enctype="multipart/form-data" method="POST" action="<?php echo base_url('c_pengeluaran_proyek/add_pengeluaran')?>">
+        <div class="form-group">
+          <label class="control-label col-md-3">Nama User</label>
+          <div class="col-md-8">
+            <select class="form-control" name="cb_user" id="cb_user">
+              <option>Pilih Nama User</option>
+              <?php foreach($user as $usr):?>
+                <option value="<?php echo $usr['id_user']?>"><?php echo $usr['nama_user']?></option>
+              <?php endforeach ?>
+            </select>
+          </div>
+        </div>
         <div class="form-group">
           <label class="control-label col-md-3">Nama Proyek</label>
           <div class="col-md-8">
-            <select class="form-control" name="cb_proyek">
-              <option>Pilih Nama Proyek</option>
+            <select class="form-control" name="cb_proyek" id="cb_proyek">
+            
             </select>
           </div>
         </div>
         <div class="form-group">
           <label class="control-label col-md-3">Anggaran Pengeluaran</label>
           <div class="col-md-8">
-            <select class="form-control" name="cb_anggaran">
+            <select class="form-control" name="cb_anggaran" id="cb_anggaran">
               <option>Pilih Anggaran proyek</option>
             </select>
           </div>
@@ -138,8 +149,8 @@
         <div class="form-group">
           <label class="control-label col-md-3">Anggaran Pengeluaran</label>
           <div class="col-md-6">
-            <select class="form-control" name="cb_anggaran">
-              <option>Pilih Anggaran proyek</option>
+            <select class="form-control" name="cb_anggaran" id="cb_anggaran">
+              
             </select>
           </div>
         </div>
@@ -179,3 +190,40 @@
   </div>
   </div>
   </div>
+  <script type="text/javascript">
+    $(function(){
+      $.ajaxSetup({
+        type: "POST",
+        url: "<?php echo base_url("c_pengeluaran_proyek/get_combo")?>",
+        cache: false,
+      });
+      $("#cb_user").change(function(){
+        var nilai = $(this).val();
+        if (nilai > 0){
+          $.ajax({
+            data: {
+              modul: 'project',
+              id : nilai
+            },
+            success: function(respond){
+              $("#cb_proyek").html(respond);
+            }           
+          })
+        }
+      });
+      $("#cb_proyek").change(function(){
+        var nilai = $(this).val();
+        if (nilai > 0){
+          $.ajax({
+            data: {
+              modul: 'anggaran',
+              id : nilai
+            },
+            success: function(respond){
+              $("#cb_anggaran").html(respond);
+            }           
+          })
+        }
+      });
+    });
+  </script>

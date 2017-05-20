@@ -47,8 +47,8 @@
                         <td><?php echo "Rp. ".number_format($d['debit'],2,',','.') ?></td>
                         <td><?php echo date('d F Y', strtotime($d['tanggal'])) ?></td>
                         <td>
-                          <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit"><span class="fa fa-pencil"></span></a>
-                          <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
+                          <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit" data="<?php echo $d['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
+                          <a href="<?= base_url()?>c_pribadi/delete_pribadi/<?= $d['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -75,8 +75,8 @@
                 <td><?php echo "Rp. ".number_format($k['kredit'],2,',','.') ?></td>
                 <td><?php echo date('d F Y', strtotime($k['tanggal'])) ?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_kredit"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_kredit" data="<?php echo $k['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url()?>c_pribadi/delete_pribadi/<?= $k['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
             <?php endforeach ?>
@@ -153,7 +153,7 @@
         <h3>Edit Pemasukkan Pribadi</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="<?php echo base_url('c_pribadi/update_pribadi/debit')?>">
         <input type="hidden" name="edit_idpribadi">
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukkan</label>
@@ -239,7 +239,7 @@
           <h3>Edit Pengeluaran</h3>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal">
+          <form class="form-horizontal" method="post" action="<?php echo base_url('c_pribadi/update_pribadi/kredit')?>">
           <input type="hidden" name="edit_idpribadi">
             <div class="form-group">
               <label class="control-label col-md-4">Tanggal Pengeluaran</label>
@@ -274,11 +274,58 @@
   <script type="text/javascript">
     $(function() {
       $('#tabel_debit').on('click','.btn_edit_debit', function(){
+        var id = $(this).attr('data');
         $('#edit_pemasukkan_pribadi').modal('show');
+        $.ajax({
+          type: 'ajax',
+          url: '<?php echo base_url()?>c_pribadi/get_pribadi',
+          method: 'get',
+          data: {id:id},
+          async: false,
+          dataType:'json',
+          success: function(data){
+            console.log(data);
+            for(i=0;i<data.length;i++){
+              $('input[name=edit_idpribadi]').val(data[i].id_pengeluaran_pribadi);
+              $('input[name=edit_tanggal_pemasukan]').val(data[i].tanggal);
+              $('input[name=edit_jumlah_ppemasukkan]').val(data[i].debit);
+              $('textarea[name=edit_keterangan_pemasukkan]').val(data[i].keterangan);
+
+            }
+          },
+          error: function(fafa){
+            console.log(fafa);
+            alert('gagal');
+          }
+        });
         });
 
+
       $('#tabel_kredit').on('click','.btn_edit_kredit', function(){
+        var id = $(this).attr('data');
         $('#edit_pengeluaran_pribadi').modal('show');
+         $.ajax({
+          type: 'ajax',
+          url: '<?php echo base_url()?>c_pribadi/get_pribadi',
+          method: 'get',
+          data: {id:id},
+          async: false,
+          dataType:'json',
+          success: function(data){
+            console.log(data);
+            for(i=0;i<data.length;i++){
+              $('input[name=edit_idpribadi]').val(data[i].id_pengeluaran_pribadi);
+              $('input[name=edit_tanggal_pengeluaran]').val(data[i].tanggal);
+              $('input[name=edit_jumlah_ppengeluaran]').val(data[i].kredit);
+              $('textarea[name=edit_keterangan_pengeluaran]').val(data[i].keterangan);
+
+            }
+          },
+          error: function(fafa){
+            console.log(fafa);
+            alert('gagal');
+          }
+        });
         });
     });
   </script>

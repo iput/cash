@@ -90,7 +90,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('assets/img/img.png'); ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs">Kang Mahfud</span>
+              <span class="hidden-xs"><?php echo $this->session->userdata('nama');?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -98,7 +98,7 @@
                 <img src="<?php echo base_url('assets/img/img.png'); ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Kang Mahfud - Super user
+                  <?php echo $this->session->userdata('nama');?>
                   <small>Member kaet Nov. 2012</small>
                 </p>
               </li>
@@ -134,7 +134,7 @@
           <img src="<?php echo base_url('assets/img/img.png'); ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Kang Mahfud</p>
+          <p><?php echo $this->session->userdata('nama');?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -175,7 +175,7 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="<?php echo base_url('pm_pemasukan_pribadi'); ?>">
+          <a href="<?php echo base_url('pm_pribadi'); ?>">
             <i class="fa fa-pie-chart"></i>
             <span>Pengeluaran Pribadi</span>
           </a>

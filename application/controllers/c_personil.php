@@ -68,11 +68,12 @@ class C_personil extends CI_controller
 		$aktif = 'offline';
 		$config = array(
                 'protocol' => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
+                'smtp_host' => 'ssl://smtp.gmail.com',
+                'smtp_port' => '465',
                 'smtp_user' => 'gangsantri26@gmail.com', // change it to yours
                 'smtp_pass' => 'jelajah123', // change it to yours
                 'mailtype' => 'html',
+                'mailpath' =>'/usr/sbin/sendmail',
                 'charset' => 'iso-8859-1',
                 'wordwrap' => TRUE
             );
@@ -94,7 +95,7 @@ class C_personil extends CI_controller
                     'no_hp' => $nohp,
                     'email' => $email,
                     'username' => $username,
-                    'password' => password_hash($password, PASSWORD_DEFAULT),                    
+                    'password' => md5($password),                 
                     'status'=>$status,
                     'last_login' => null,
                     'is_active' => $aktif
@@ -141,5 +142,37 @@ class C_personil extends CI_controller
         if ($result>= 1) {
             redirect('C_personil/index');
         }
+    }
+
+    //non email
+
+    public function add_user(){
+        $namaUser = $this->input->post('txt_nama_personil');
+        $alamat = $this->input->post('txt_alamat');
+        $nohp = $this->input->post('txt_nohp');
+        $email = $this->input->post('txt_email');
+        $username = $this->random_user(5);
+        $password = $this->random_pass(8);
+        $status = 'belum verifikasi';
+        $aktif = 'offline';
+        $field = array(
+                    'nama_user' => $namaUser,
+                    'alamat' => $alamat. ' '.$password,
+                    'no_hp' => $nohp,
+                    'email' => $email,
+                    'username' => $username,
+                    'password' => md5($password),                 
+                    'status'=>$status,
+                    'last_login' => null,
+                    'is_active' => $aktif
+            );
+            $result = $this->adm_personil->add_personil('user', $field);
+            $msg['success'] = FALSE;
+            if ($result) {
+               
+                $msg['success'] = TRUE;
+                redirect('C_personil/index');
+                }
+              
     }
 }

@@ -40,16 +40,18 @@
                         <td><span class="glyphicon glyphicon-cog"></span></td>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="tabel_debit">
+                    <?php foreach($debit as $d):?>
                       <tr>
-                        <td>1</td>
-                        <td>ISO BALI</td>
-                        <td>Makhfud</td>
+                        <td><?php echo $d['keterangan']?></td>
+                        <td><?php echo "Rp. ".number_format($d['debit'],2,',','.') ?></td>
+                        <td><?php echo date('d F Y', strtotime($d['tanggal'])) ?></td>
                         <td>
-                          <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pendapatanP"><span class="fa fa-pencil"></span></a>
-                          <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class=" fa fa-trash-o"></span></a>
+                          <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pemasukkan" data="<?php echo $d['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
+                          <a href="<?= base_url()?>pm_pribadi/delete_pribadi/<?= $d['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class=" fa fa-trash-o"></span></a>
                         </td>
                       </tr>
+                      <?php endforeach ?>
                     </tbody>
                   </table>
               </div>
@@ -66,16 +68,18 @@
                 <td><span class="glyphicon glyphicon-cog"></span></td>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="tabel_kredit">
+              <?php foreach ($kredit as $k):?>
               <tr>
-                <td>1</td>
-                <td></td>
-                <td></td>
+                <td><?php echo $k['keterangan']?></td>
+                <td><?php echo "Rp. ".number_format($k['kredit'],2,',','.') ?></td>
+                <td><?php echo date('d F Y', strtotime($k['tanggal'])) ?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pengeluaran"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pengeluaran" data="<?php echo $k['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url()?>pm_pribadi/delete_pribadi/<?= $k['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
+              <?php endforeach ?>
             </tbody>
           </table>
               </div>
@@ -107,23 +111,23 @@
         <h3>Tambah Pemasukan Pribadi</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="<?php echo base_url('pm_pribadi/add_pribadi/debit')?>">
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukan</label>
             <div class="col-md-6">
-              <input type="date" name="tgl_pemasukkan" class="form-control">
+              <input type="date" name="tgl_pemasukkan" class="form-control" value="<?php echo date('Y-m-d H:i:s');?>">
             </div>
           </div>        
           <div class="form-group">
-            <label class="control-label col-md-4">Jumlah Pengeluaran</label>
+            <label class="control-label col-md-4">Jumlah Pemasukkan</label>
             <div class="col-md-6">
-              <input type="text" name="jumlah_pendapatan" class="form-control" id="jumlah_pendapatan">
+              <input type="text" name="jumlah_pemasukkan" class="form-control" id="jumlah_pemasukkan">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-4">Keterangan</label>
             <div class="col-md-6">
-              <textarea name="keterangan_pengeluaran" class="form-control"></textarea>
+              <textarea name="keterangan_pemasukkan" class="form-control"></textarea>
             </div>
           </div>          
           <div class="form-group">
@@ -144,26 +148,27 @@
     <div class="modal-content">
       <div class="modal-header bg-aqua">
         <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-        <h3>Edit Pemasukan Pribadi</h3>
+        <h3>Edit Pemasukkan Pribadi</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" action="<?php echo base_url('pm_pribadi/update_pribadi/debit')?>">
+        <input type="hidden" name="edit_idpribadi">
           <div class="form-group">
             <label class="control-label col-md-4">Tanggal Pemasukan</label>
             <div class="col-md-6">
-              <input type="date" name="edit_tgl_pemasukan" class="form-control">
+              <input type="date" name="edit_tgl_pemasukkan" class="form-control">
             </div>
           </div>        
           <div class="form-group">
             <label class="control-label col-md-4">Jumlah Pemasukan</label>
             <div class="col-md-6">
-              <input type="text" name="edit_jumlah_pemasukan" class="form-control" id="edit_jumlah_pemasukan">
+              <input type="text" name="edit_jumlah_pemasukkan" class="form-control" id="edit_jumlah_pemasukkan">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-4">Keterangan</label>
             <div class="col-md-6">
-              <textarea name="edit_keterangan_pemasukan" class="form-control"></textarea>
+              <textarea name="edit_keterangan_pemasukkan" class="form-control"></textarea>
             </div>
           </div>          
           <div class="form-group">
@@ -184,26 +189,26 @@
       <div class="modal-content">
         <div class="modal-header bg-aqua">
           <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-          <h3>Tambah Pemasukan</h3>
+          <h3>Tambah Pengeluaran Pribadi</h3>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal">
+          <form class="form-horizontal" method="post" action="<?php echo base_url('pm_pribadi/add_pribadi/kredit')?>">
             <div class="form-group">
-              <label class="control-label col-md-4">Tanggal Pemasukan</label>
+              <label class="control-label col-md-4">Tanggal Pengeluaran</label>
               <div class="col-md-6">
-                <input type="date" name="edit_nama_pengeluaran" class="form-control">
+                <input type="date" name="tgl_pengeluaran" class="form-control" value="<?php echo date('Y-m-d H:i:s');?>">
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-md-4">Jumlah Pemasukan</label>
+              <label class="control-label col-md-4">Jumlah Pengeluaran</label>
               <div class="col-md-6">
-                <input type="text" name="edit_jumlah_pengeluaran" class="form-control" placeholder="Rp. ">
+                <input type="text" name="jumlah_pengeluaran" class="form-control" id="jumlah_pengeluaran">
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-md-4">Keterangan Pemasukan</label>
+              <label class="control-label col-md-4">Keterangan</label>
               <div class="col-md-6">
-                <textarea class="form-control" name="edit_ket_pengeluaran"></textarea>
+                <textarea class="form-control" name="keterangan_pengeluaran"></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -224,26 +229,27 @@
       <div class="modal-content">
         <div class="modal-header bg-aqua">
           <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
-          <h3>Edit Pemasukan</h3>
+          <h3>Edit Pengeluaran Pribadi</h3>
         </div>
         <div class="modal-body">
-          <form class="form-horizontal">
+          <form class="form-horizontal" method="post" action="<?php echo base_url('pm_pribadi/update_pribadi/kredit')?>">
+          <input type="hidden" name="edit_idpribadi">
             <div class="form-group">
-              <label class="control-label col-md-4">Tanggal Pemasukan</label>
+              <label class="control-label col-md-4">Tanggal Pengeluaran</label>
               <div class="col-md-6">
-                <input type="date" name="edit_nama_pengeluaran" class="form-control">
+                <input type="date" name="edit_tgl_pengeluaran" class="form-control">
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-md-4">Jumlah Pemasukan</label>
+              <label class="control-label col-md-4">Jumlah Pengeluaran</label>
               <div class="col-md-6">
-                <input type="text" name="edit_jumlah_pengeluaran" class="form-control" placeholder="Rp. ">
+                <input type="text" name="edit_jumlah_pengeluaran" class="form-control" id="edit_jumlah_pengeluaran">
               </div>
             </div>
             <div class="form-group">
-              <label class="control-label col-md-4">Keterangan Pemasukan</label>
+              <label class="control-label col-md-4">Keterangan</label>
               <div class="col-md-6">
-                <textarea class="form-control" name="edit_ket_pengeluaran"></textarea>
+                <textarea class="form-control" name="edit_keterangan_pengeluaran"></textarea>
               </div>
             </div>
             <div class="form-group">
@@ -258,3 +264,71 @@
       </div>
     </div>
   </div>
+<script type="text/javascript">
+$(function(){
+$('#tabel_debit').on('click', '.btn_edit_pemasukkan', function(){
+  var id=$(this).attr('data');
+  $('#edit_pemasukan_pribadi').modal('show');
+  $.ajax({
+    type: 'ajax',
+    url: '<?php echo base_url()?>pm_pribadi/get_pribadi',
+    method: 'get',
+    data : {id:id},
+    async: false,
+    dataType: 'json',
+    success: function(data){
+      console.log(data);
+      for(i=0;i<data.length;i++){
+        $('input[name=edit_idpribadi]').val(data[i].id_pengeluaran_pribadi);
+        $('input[name=edit_tgl_pemasukkan]').val(data[i].tanggal);
+        $('input[name=edit_jumlah_pemasukkan]').val(data[i].debit);
+        $('textarea[name=edit_keterangan_pemasukkan]').val(data[i].keterangan);
+
+
+      }
+    },
+    error: function(fafa){
+      console.log(fafa);
+      alert('gagal');
+    }
+  });
+});
+$('#tabel_kredit').on('click', '.btn_edit_pengeluaran', function(){
+  var id = $(this).attr('data');
+  $('#edit_pengeluaran_pribadi').modal('show');
+  $.ajax({
+          type: 'ajax',
+          url: '<?php echo base_url()?>c_pribadi/get_pribadi',
+          method: 'get',
+          data: {id:id},
+          async: false,
+          dataType:'json',
+          success: function(data){
+            console.log(data);
+            for(i=0;i<data.length;i++){
+              $('input[name=edit_idpribadi]').val(data[i].id_pengeluaran_pribadi);
+              $('input[name=edit_tgl_pengeluaran]').val(data[i].tanggal);
+              $('input[name=edit_jumlah_pengeluaran]').val(data[i].kredit);
+              $('textarea[name=edit_keterangan_pengeluaran]').val(data[i].keterangan);
+
+            }
+          },
+          error: function(fafa){
+            console.log(fafa);
+            alert('gagal');
+          }
+        });
+
+});
+});  
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#jumlah_pemasukkan').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#edit_jumlah_pemasukkan').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#jumlah_pengeluaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+    $('#edit_jumlah_pengeluaran').maskMoney({prefix: 'Rp. ', thousands: '.', decimal: ',', precision: 0});
+  });
+
+</script>

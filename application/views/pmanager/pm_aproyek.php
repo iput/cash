@@ -34,7 +34,7 @@
             <?php foreach($nm_anggaran as $ag):?>
               <tr>
                 <td><?php echo $ag['nama_project']?></td>
-                <td><?php echo $ag['nama_pengeluaran']?></td>
+                <td><?php echo $ag['nama_anggaran']?></td>
                 <td><?php echo "Rp. ".number_format($ag['anggaran'],2,',','.') ?></td>
                 <td>
                   <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP" data="<?php echo $ag['id_anggaran_pengeluaran'];?>"><span class="fa fa-pencil"></span></a>
@@ -153,7 +153,7 @@
 </div>
 <script type="text/javascript">
  $(function(){
-$('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
+      $('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
       var id = $(this).attr('data');
       $('#edit_anggaran').modal('show');
       $.ajax({
@@ -168,7 +168,7 @@ $('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
           for(i=0;i<data.length;i++){
             $('input[name=edit_ap]').val(data[i].id_anggaran_pengeluaran);
             $('#edit_nama_proyek').val(data[i].id_project);
-            $('input[name=edit_nama_anggaran]').val(data[i].nama_pengeluaran);
+            $('input[name=edit_nama_anggaran]').val(data[i].nama_anggaran);
             $('input[name=edit_jumlah_anggaran]').val(data[i].anggaran);
           }
         },
@@ -179,6 +179,7 @@ $('#tabel_anggarandana').on('click', '.btn_edit_anggaranP', function(){
       });
 
     });
+      
  }); 
 </script>
 

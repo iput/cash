@@ -10,6 +10,7 @@ defined('BASEPATH')OR exit('no direct script access allowed');
  	{
  		parent::__construct();
  		$this->load->model('adm_proyek');
+ 		date_default_timezone_set("Asia/Jakarta");
  	}
 
  	public function index()

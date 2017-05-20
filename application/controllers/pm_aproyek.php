@@ -28,7 +28,7 @@
  		$anggaran = str_replace(".","", $anggaran2);
  		$field = array(
  			'id_project' => $id_project,
- 			'nama_pengeluaran' => $nama_anggaran,
+ 			'nama_anggaran' => $nama_anggaran,
  			'anggaran' => $anggaran,
  			'sisa_anggaran' => $anggaran
  			);
@@ -54,7 +54,7 @@
  		$anggaran = str_replace(".","", $anggaran2);
  		$field = array(
  			'id_project' => $this->input->post('edit_nama_proyek'),
- 			'nama_pengeluaran' => $this->input->post('edit_nama_anggaran'),
+ 			'nama_anggaran' => $this->input->post('edit_nama_anggaran'),
  			'anggaran' => $anggaran
  			);
  		$result = $this->prm_aproyek->update_anggaran_pengeluaran('anggaran_pengeluaran', $field, $id);
