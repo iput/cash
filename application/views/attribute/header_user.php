@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Manajer page Petty Cash</title>
+  <title>User page Petty Cash</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -165,13 +165,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="#">
+          <li><a href="<?php echo base_url('User_proyek')?>">
             <i class="fa fa-circle-o"></i>
             <span>Proyek</span>
           </a>
         </li>
-        <li class="treeview-menu">
-          <a href="#">
+        <li>
+          <a href="<?= base_url('user_aset')?>">
             <i class="fa fa-circle-o"></i>
             <span>Pribadi</span>
           </a>
@@ -180,17 +180,11 @@
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
+            <i class="fa fa-cogs"></i>
             <span>Setting</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span>Setting</span>
-          </a>
-        </li>
-        
+
       </ul>
     </section>
     <!-- /.sidebar -->
