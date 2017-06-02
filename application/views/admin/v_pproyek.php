@@ -42,8 +42,8 @@
                 <td>Makan</td>
                 <td>a</td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pengeluaranP"><span class="fa fa-pencil"></span></a>
-                  <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="glyphicon glyphicon-remove"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-xs btn_edit_pengeluaranP"><span class="fa fa-pencil"></span></a>
+                  <a href="#" class="btn btn-danger btn-xs" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="glyphicon glyphicon-remove"></span></a>
                 </td>
               </tr>
             </tbody>

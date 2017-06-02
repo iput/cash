@@ -16,8 +16,8 @@
 
  	public function index()
  	{
- 		// $idUser=$this->session->userdata('idUser');
- 		$data['nm_project'] = $this->prm_pengeluaran->get_nm_project(1);
+ 		$idUser=$this->session->userdata('id_user');
+ 		$data['nm_project'] = $this->prm_pengeluaran->get_nm_project($idUser);
         $data['all_pengeluaran'] = $this->prm_pengeluaran->getAllPengeluaran();
  		$this->load->view('attribute/header_pm');
  		$this->load->view('pmanager/Pm_pproyek', $data);
@@ -34,7 +34,8 @@
  	}
 
  	public function add_pengeluaran(){
- 		$sisa="";
+ 		$user = $this->session->userdata('id_user');
+        $sisa="";
  		$id_anggaran = $this->input->post('nama_anggaran');
         $jumlah1 = $this->input->post('jumlah_pengeluaran');
         $jumlah2 = str_replace("Rp. ", "", $jumlah1);
@@ -60,7 +61,7 @@
                     "waktu_pengeluaran" => date("Y-m-d H:i:s"),
                     "keterangan_pengeluaran" => $this->input->post('ket_pengeluaran'),
                     "bukti_pengeluaran" => $gbr['file_name'],
-                    "id_user" =>1
+                    "id_user" => $user
                     );
                 $sisa_anggaran = $this->prm_pengeluaran->get_sisa_anggaran($id_anggaran);
                 foreach($sisa_anggaran as $s){
@@ -74,10 +75,10 @@
                 $result = $this->prm_pengeluaran->add_pengeluaran('pengeluaran_project', $data);
                 if ($result){
                     $this->prm_pengeluaran->update_anggaran('anggaran_pengeluaran', $sisa_update, $id_anggaran);
-                unset($data);
-                unset($jumlah1);
-                unset($jumlah2);
                 redirect('Pm_ppengeluaran');    
+                }
+                else{
+                    echo $user;
                 }
                 
             }

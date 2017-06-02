@@ -47,13 +47,8 @@
                         <td><?php echo "Rp. ".number_format($d['debit'],2,',','.') ?></td>
                         <td><?php echo date('d F Y', strtotime($d['tanggal'])) ?></td>
                         <td>
-<<<<<<< HEAD
-                          <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit" data="<?php echo $d['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
-                          <a href="<?= base_url()?>c_pribadi/delete_pribadi/<?= $d['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
-=======
-                          <a href="javascript:;" class="btn btn-info btn-flat btn_edit_debit" data="<?php echo $d['id_pengeluaran_pribadi'] ?>"><span class="fa fa-pencil"></span></a>
-                          <a href="#" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakn ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
->>>>>>> 61a5261a11abf548d81b284ba4d98294cfd21b4d
+                          <a href="javascript:;" class="btn btn-info btn-xs btn_edit_debit" data="<?php echo $d['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
+                          <a href="<?= base_url()?>c_pribadi/delete_pribadi/<?= $d['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-xs" onclick="return confirm('Anda yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
                         </td>
                       </tr>
                     <?php endforeach ?>
@@ -80,8 +75,8 @@
                 <td><?php echo "Rp. ".number_format($k['kredit'],2,',','.') ?></td>
                 <td><?php echo date('d F Y', strtotime($k['tanggal'])) ?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_kredit" data="<?php echo $k['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="<?= base_url()?>c_pribadi/delete_pribadi/<?= $k['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-flat" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-xs btn_edit_kredit" data="<?php echo $k['id_pengeluaran_pribadi'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url()?>c_pribadi/delete_pribadi/<?= $k['id_pengeluaran_pribadi']?>" class="btn btn-danger btn-xs" onclick="return confirm('apakah anda yakin ingi menghapus data tersebut ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
             <?php endforeach ?>

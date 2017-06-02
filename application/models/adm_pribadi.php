@@ -74,13 +74,10 @@ class Adm_pribadi extends CI_Model
         }
 
 	}
-<<<<<<< HEAD
 
 	public function get_pribadi($id){
 		$query = $this->db->query('select * from pengeluaran_pribadi where id_pengeluaran_pribadi='.$id);
 		return $query->result_array();
 	}
-=======
-	
->>>>>>> 61a5261a11abf548d81b284ba4d98294cfd21b4d
+
 }

@@ -70,8 +70,8 @@ class C_personil extends CI_controller
                 'protocol' => 'smtp',
                 'smtp_host' => 'ssl://smtp.gmail.com',
                 'smtp_port' => '465',
-                'smtp_user' => 'gangsantri26@gmail.com', // change it to yours
-                'smtp_pass' => 'jelajah123', // change it to yours
+                'smtp_user' => 'pkljti@gmail.com', // change it to yours
+                'smtp_pass' => 'pkli2017', // change it to yours
                 'mailtype' => 'html',
                 'mailpath' =>'/usr/sbin/sendmail',
                 'charset' => 'iso-8859-1',
@@ -95,7 +95,7 @@ class C_personil extends CI_controller
                     'no_hp' => $nohp,
                     'email' => $email,
                     'username' => $username,
-                    'password' => md5($password),                 
+                    'password' => base64_encode($password),                 
                     'status'=>$status,
                     'last_login' => null,
                     'is_active' => $aktif

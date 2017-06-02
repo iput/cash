@@ -13,7 +13,7 @@ class Adm_pengeluaran extends CI_Model{
 		$this->db->select('project_personil.id_project, nama_project');
 		$this->db->from('project');
 		$this->db->where('project_personil.id_user', $idUser);
-		$this->db->join('project_personil','project_personil.id_level_user=3 and project_personil.id_project=project.id_project');
+		$this->db->join('project_personil','project_personil.id_level_user =3 and project_personil.id_project=project.id_project');
 		$query = $this->db->get();
 		$nilai = $query->result_array();	
 		foreach ($nilai as $hsl) {

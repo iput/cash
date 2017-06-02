@@ -14,7 +14,6 @@ class C_index extends CI_Controller
 	}
 
 	public function index(){
-		if ($this->session->userdata('nama')&&$this->session->userdata('idUser')&&$this->session->userdata('email')){
 		$data['stat1']="active";
 		$data['stat2']="";
 		$data['stat3']="";
@@ -27,10 +26,8 @@ class C_index extends CI_Controller
 		$this->load->view('attribute/header', $data);
 		$this->load->view('index');
 		$this->load->view('attribute/footer');	
-		}
-		else{
-			redirect('C_login');
-		}
+		
+		
 		
 	}
 }

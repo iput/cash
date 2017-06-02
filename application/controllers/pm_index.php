@@ -12,7 +12,7 @@
 
  	public function index()
  	{
- 		if ($this->session->userdata('nama')&&$this->session->userdata('idUser')&&$this->session->userdata('email')){
+ 		if ($this->session->userdata('id_user')&&$this->session->userdata('nama_user')){
  		$this->load->view('attribute/header_pm');
  		$this->load->view('pmanager/index');
  		$this->load->view('attribute/footer_pm');	

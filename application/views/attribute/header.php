@@ -89,7 +89,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url('assets/img/img.png'); ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs">Kang Mahfud</span>
+              <span class="hidden-xs"><?php echo $this->session->userdata('nama_user');?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -97,8 +97,8 @@
                 <img src="<?php echo base_url('assets/img/img.png'); ?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Kang Mahfud - Super user
-                  <small>Member kaet Nov. 2012</small>
+                  <?php echo $this->session->userdata('nama_user');?> - Super user
+                  <small>Admin Petty Cash</small>
                 </p>
               </li>
               <!-- Menu Footer-->
@@ -133,7 +133,7 @@
           <img src="<?php echo base_url('assets/img/img.png'); ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Kang Mahfud</p>
+          <p><?php echo $this->session->userdata('nama_user');?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>

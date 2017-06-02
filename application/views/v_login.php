@@ -45,7 +45,7 @@
                 <div class="alert alert-success" style="display: none;"></div>
                 <form action="<?php echo base_url('c_login/login_process'); ?>" method="post">
                     <div class="form-group has-feedback">
-                        <input type="text"  name="txt_log_user" class="form-control" placeholder="Username / Email" required="">
+                        <input type="text"  name="txt_log_user" class="form-control" placeholder="Username" required="">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">

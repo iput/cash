@@ -56,8 +56,8 @@
                 <td><?php echo date('d F Y', strtotime($tgl_mulai))?></td>
                 <td><?php echo date('d F Y', strtotime($tgl_selesai))?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_proyek" data = "<?php echo $data['id_project'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="<?= base_url()?>c_proyek/delete_project/<?= $data['id_project']?>" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-xs btn_edit_proyek" data = "<?php echo $data['id_project'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url()?>c_proyek/delete_project/<?= $data['id_project']?>" class="btn btn-danger btn-xs" onclick="return confirm('Ada yakin ingin menghapus data ini ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
              <?php endforeach ?>
@@ -86,8 +86,8 @@
                 <td><?php echo "Rp. ".number_format($key['jumlah_tambahan'],2,',','.')?></td>
                 <td><?php echo date('d F Y', strtotime($key['waktu_tambahan']))?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_anggaranP" data ="<?php echo $key['id_tambahan'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="<?= base_url()?>c_proyek/delete_suntikan/<?= $key['id_tambahan']?>" class="btn btn-danger btn-flat" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-xs btn_edit_anggaranP" data ="<?php echo $key['id_tambahan'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url()?>c_proyek/delete_suntikan/<?= $key['id_tambahan']?>" class="btn btn-danger btn-xs" onclick="return confirm('Ada yakin ingin menghapus data terkait ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
                <?php endforeach ?>

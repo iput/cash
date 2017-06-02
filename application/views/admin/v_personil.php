@@ -50,8 +50,8 @@
                 <td><?php echo $data['username']; ?></td>
                 <td><?php echo $status?></td>
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_personil" data="<?php echo $data['id_user'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="<?= base_url() ?>c_personil/delete_personil/<?= $data['id_user'] ?>" class="btn btn-danger btn-flat" onclick="return confirm('Yakin akan menghapus data ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-xs btn_edit_personil" data="<?php echo $data['id_user'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url() ?>c_personil/delete_personil/<?= $data['id_user'] ?>" class="btn btn-danger btn-xs" onclick="return confirm('Yakin akan menghapus data ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
               <?php endforeach ?>
@@ -79,7 +79,7 @@
         <h3>Tambah personil Baru</h3>
       </div>
       <div class="modal-body">
-        <form class="form-horizontal" id="form_tambah_personil" method="POST" action="<?php echo base_url('c_personil/add_user');?>">
+        <form class="form-horizontal" id="form_tambah_personil" method="POST" action="<?php echo base_url('c_personil/add_personil');?>">
           <div class="form-group">
             <label class="control-label col-md-3">Nama User</label>
             <div class="col-md-6">

@@ -38,8 +38,8 @@
                 <td><?php echo $tabel['nama_user']?></td>
                 <td><?php echo $tabel['nama_level']?></td>               
                 <td>
-                  <a href="javascript:;" class="btn btn-info btn-flat btn_edit_pp" data="<?php echo $tabel['id_project_personil'];?>"><span class="fa fa-pencil"></span></a>
-                  <a href="<?= base_url()?>c_personil_proyek/delete_personil_project/<?= $tabel['id_project_personil']?>" class="btn btn-danger btn-flat" onclick="return confirm('Anda yakin akan menghapus record ?');"><span class="fa fa-trash-o"></span></a>
+                  <a href="javascript:;" class="btn btn-info btn-xs btn_edit_pp" data="<?php echo $tabel['id_project_personil'];?>"><span class="fa fa-pencil"></span></a>
+                  <a href="<?= base_url()?>c_personil_proyek/delete_personil_project/<?= $tabel['id_project_personil']?>" class="btn btn-danger btn-xs" onclick="return confirm('Anda yakin akan menghapus record ?');"><span class="fa fa-trash-o"></span></a>
                 </td>
               </tr>
                <?php endforeach ?>

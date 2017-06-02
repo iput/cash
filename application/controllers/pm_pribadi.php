@@ -21,7 +21,7 @@
  	}
 
  	public function add_pribadi($param){
- 		
+ 		$idUser = $this->session->userdata('id_user');
 		if ($param=="debit"){
 			$kredit ="0";
 			$debit1 = $this->input->post('jumlah_pemasukkan');
@@ -38,7 +38,6 @@
 			$tanggal = $this->input->post('tgl_pengeluaran');
 			$keterangan = $this->input->post('keterangan_pengeluaran');
 		}
-		$idUser = $this->session->userdata('idUser');
 		$field = array (
 			'id_user' =>$idUser,
 			'tanggal' =>$tanggal,
